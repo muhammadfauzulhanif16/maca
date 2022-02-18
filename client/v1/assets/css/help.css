@@ -1,0 +1,64 @@
+#helpContainer {
+	z-index: 999;
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	display: none;
+	justify-content: right;
+	padding: 1rem;
+}
+
+#help {
+	overflow: auto;
+	height: 100%;
+	width: 100%;
+	border-radius: 1rem;
+	padding: 0 2rem 2rem 2rem;
+}
+
+#help > div {
+	display:flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 2rem 0;
+	position: sticky;
+	top: 0;
+}
+
+#help > div > h2 {
+	margin: 0;
+}
+
+#help ul,
+#help ol {
+	margin: 0;
+	padding: 0 20px;
+}
+
+#help::-webkit-scrollbar-thumb {
+	padding: 1rem;
+}
+
+@media only screen and (min-width: 30em) {
+	#helpContainer {
+		padding: 1.5rem;
+	}
+	
+	#help {
+		height: 87.5%;
+		width: 62.5%;
+	}
+}
+
+@media only screen and (min-width: 48em) {
+	#helpContainer {
+		padding: 2rem;
+	}
+	
+	#help {
+		height: 75%;
+		width: 25%;
+	}
+}

@@ -1,0 +1,83 @@
+@import "book.css";
+@import "action.css";
+
+#readingBookPage,
+#finishedBookPage {
+	width: 100%;
+}
+
+#readingBookPage > div,
+#finishedBookPage > div {
+	display:flex;
+	justify-content: space-between;
+	position:sticky;
+	top: 0;
+	padding: 1rem;
+	align-items: center;
+}
+
+#readingBookPage > div > h2,
+#finishedBookPage > div > h2 {
+	display:inline;
+	line-height: 0;
+}
+
+#readingBookList,
+#finishedBookList {
+	padding: 0 1rem;
+	width: 100%;
+	display: grid;
+	margin: 0;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 1rem;
+	box-sizing: border-box;
+}
+
+#readingBookPageCloseIcon > i,
+#finishedBookPageCloseIcon > i {
+	padding: .5rem;
+	border-radius: .75rem;
+}
+
+@media only screen and (min-width: 30em) {
+	#readingBookPage > div,
+	#finishedBookPage > div {
+		padding: 1rem 1.5rem;
+	}
+	
+	#readingBookList,
+	#finishedBookList {
+		gap: 1.25rem;
+	}
+}
+
+@media only screen and (min-width: 48em) {
+	#readingBookPage > div,
+	#finishedBookPage > div {
+		padding: 1rem 2rem;
+	}
+	
+	#readingBookList,
+	#finishedBookList {
+		padding: 0 1.5rem;
+		gap: 1.75rem;
+		grid-template-columns: repeat(3, 1fr);
+		box-sizing: border-box;
+	}
+	
+	#readingBookPageCloseIcon > i,
+	#finishedBookPageCloseIcon > i {
+		padding: .75rem;
+		border-radius: 1rem;
+	}
+}
+
+@media only screen and (min-width: 62em) {
+	#readingBookList,
+	#finishedBookList {
+		grid-template-columns: repeat(4, 1fr);
+		padding: 0 2rem;
+		gap: 2rem;
+		box-sizing: border-box;
+	}
+}

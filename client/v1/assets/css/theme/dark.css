@@ -1,0 +1,98 @@
+/*---------- background color ----------*/
+/*---------- dark ----------*/
+.dark-theme,
+.dark-theme input,
+.dark-theme > header,
+.dark-theme > footer,
+.dark-theme #readingBookPage > div,
+.dark-theme #finishedBookPage > div {
+	background-color: #171923;
+}
+
+.dark-theme #help,
+.dark-theme #help > div,
+.dark-theme .book-item {
+	background-color: #1A202C;
+}
+/*---------- dark ----------*/
+
+/*---------- light ----------*/
+.dark-theme #sunIcon:hover,
+.dark-theme #helpIcon:hover > i,
+.dark-theme #helpCloseIcon:hover > i,
+.dark-theme #moonIcon:hover,
+.dark-theme #searchIcon:hover > i,
+.dark-theme #exitSearchIcon:hover > i,
+.dark-theme #addBookPageIcon:hover > i,
+.dark-theme input[type="submit"]:hover,
+.dark-theme #addBookPageIcon:hover > span,
+.dark-theme #readingBookPageIcon:hover > i,
+.dark-theme #addBookPageCloseIcon:hover > i,
+.dark-theme #finishedBookPageIcon:hover > i,
+.dark-theme #readingBookPageIcon:hover > span,
+.dark-theme #finishedBookPageIcon:hover > span,
+.dark-theme #readingBookPageCloseIcon:hover > i,
+.dark-theme #finishedBookPageCloseIcon:hover > i,
+.dark-theme::-webkit-scrollbar-thumb,
+.dark-theme #help::-webkit-scrollbar-thumb {
+	background-color: #f7fafc;
+}
+
+#help {
+	box-shadow: 0 0 1rem .5rem rgba(23,25,35,0.1);
+}
+/*---------- light ----------*/
+/*---------- background color ----------*/
+
+
+
+/*---------- font color ----------*/
+/*---------- dark ----------*/
+.dark-theme #sunIcon:hover,
+.dark-theme #helpIcon:hover > i,
+.dark-theme #helpCloseIcon:hover > i,
+.dark-theme #moonIcon:hover,
+.dark-theme #searchIcon:hover > i,
+.dark-theme #exitSearchIcon:hover > i,
+.dark-theme #addBookPageIcon:hover > i,
+.dark-theme input[type="submit"]:hover,
+.dark-theme #addBookPageIcon:hover > span,
+.dark-theme #readingBookPageIcon:hover > i,
+.dark-theme #addBookPageCloseIcon:hover > i,
+.dark-theme #finishedBookPageIcon:hover > i,
+.dark-theme #readingBookPageIcon:hover > span,
+.dark-theme #finishedBookPageIcon:hover > span,
+.dark-theme #readingBookPageCloseIcon:hover > i,
+.dark-theme #finishedBookPageCloseIcon:hover > i {
+	color: #171923;
+}
+/*---------- dark ----------*/
+
+/*---------- light ----------*/
+.dark-theme,
+.dark-theme a,
+.dark-theme input,
+.dark-theme #helpIcon > i,
+.dark-theme #helpCloseIcon > i,
+.dark-theme #sunIcon,
+.dark-theme #moonIcon,
+.dark-theme #searchIcon > i,
+.dark-theme #exitSearchIcon > i,
+.dark-theme #addBookPageIcon > i,
+.dark-theme .tooltip .tooltiptext,
+.dark-theme #readingBookPageIcon > i,
+.dark-theme #addBookPageCloseIcon > i,
+.dark-theme #finishedBookPageIcon > i,
+.dark-theme #readingBookPageCloseIcon > i,
+.dark-theme #finishedBookPageCloseIcon > i {
+	color: #f7fafc;
+}
+/*---------- light ----------*/
+
+.dark-theme #deleteBookIcon:hover,
+.dark-theme #editBookIcon:hover,
+.dark-theme #readingBookIcon:hover,
+.dark-theme #finishedBookIcon:hover {
+	color: #1A202C;
+}
+/*---------- font color ----------*/

@@ -1,0 +1,15 @@
+#searchContainer {
+	display: flex;
+	align-items: center;
+	justify-content: end;
+}
+
+#inputSearch {
+	margin-right: 2rem;
+	width: 6rem;
+}
+
+#search {
+	width: 6rem;
+	margin: 0 !important;
+}

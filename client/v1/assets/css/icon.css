@@ -1,0 +1,21 @@
+#sunIcon,
+#moonIcon,
+#helpIcon > i,
+#searchIcon > i,
+#exitSearchIcon > i,
+#helpCloseIcon > i {
+	padding: .5rem;
+	border-radius: .75rem;
+}
+
+@media only screen and (min-width: 48em) {
+	#sunIcon,
+	#moonIcon,
+	#helpIcon > i,
+	#searchIcon > i,
+	#exitSearchIcon > i,
+	#helpCloseIcon > i {
+		padding: .75rem;
+		border-radius: 1rem;
+	}
+}

@@ -1,0 +1,31 @@
+header {
+	left: 0;
+	top: 0;
+	right: 0;
+	box-sizing: border-box;
+	padding: 1rem;
+	z-index: 2;
+}
+
+nav {
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+}
+
+.brand {
+	font-size: 1.5rem;
+	line-height: 0;
+}
+
+@media only screen and (min-width: 30em) {
+	header {
+		padding: 1.5rem;
+	}
+}
+
+@media only screen and (min-width: 48em) {
+	header {
+		padding: 2rem;
+	}
+}

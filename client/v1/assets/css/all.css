@@ -1,0 +1,39 @@
+* {
+	user-select: none;
+	transition: all ease-in-out .3s;
+	font-family: 'Poppins', sans-serif;
+}
+
+body {
+	margin: 0;
+}
+
+main {
+	position: relative;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+}
+
+a {
+	text-decoration: none;
+}
+
+button {
+	border: none;
+	background: transparent;
+	cursor: pointer;
+	padding: 0;
+}
+
+.align-items-center {
+	align-items: center;
+}
+
+.position-fixed {
+	position: fixed;
+}
+
+.display-flex {
+	display: flex;
+}
