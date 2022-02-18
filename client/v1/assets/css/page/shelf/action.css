@@ -1,0 +1,41 @@
+#finishedBookIcon,
+#readingBookIcon,
+#editBookIcon,
+#deleteBookIcon {
+	padding: .1rem;
+	border-radius: .5rem;
+}
+
+#finishedBookIcon,
+#readingBookIcon {
+	color: #63B3ED;
+}
+
+#deleteBookIcon {
+	color: #FC8181;
+}
+
+#finishedBookIcon:hover,
+#readingBookIcon:hover {
+	background-color: #63B3ED;
+}
+
+#deleteBookIcon:hover {
+	background-color: #FC8181;
+}
+
+@media only screen and (min-width: 30em) {
+	#finishedBookIcon,
+	#readingBookIcon,
+	#deleteBookIcon {
+		padding: .3rem;
+	}
+}
+
+@media only screen and (min-width: 48em) {
+	#finishedBookIcon,
+	#readingBookIcon,
+	#deleteBookIcon {
+		padding: .5rem;
+	}
+}

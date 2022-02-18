@@ -1,0 +1,60 @@
+#bookActionPageContainer {
+	text-align: center;
+	align-items: center;
+	flex-direction: column;
+	justify-content: space-evenly;
+}
+
+
+#addBookPageIcon > i,
+#readingBookPageIcon > i,
+#finishedBookPageIcon > i,
+#addBookPageIcon > span,
+#readingBookPageIcon > span,
+#finishedBookPageIcon > span {
+	border-radius: 1rem;
+	padding: .5rem;
+}
+
+#addBookPageIcon:hover > i,
+#readingBookPageIcon:hover > i,
+#finishedBookPageIcon:hover > i,
+#addBookPageIcon:hover > span,
+#readingBookPageIcon:hover > span,
+#finishedBookPageIcon:hover > span {
+	cursor: pointer;
+}
+
+.tooltip {
+	position: relative;
+	display: inline-block;
+}
+
+.tooltip .tooltiptext {
+	font-size: 1rem;
+	width: 7.5rem;
+	text-align: center;
+	border-radius: 1rem;
+	padding: 1rem 0;
+	position: absolute;
+	top: 83%;
+	left: 38%;
+	margin-left: -60px;
+}
+
+#socialMedia {
+	display: flex;
+	justify-content: space-between;
+}
+
+@media only screen and (min-width: 48em) {
+	#bookActionPageContainer {
+		flex-direction: row;
+	}
+	
+	#addBookPageIcon,
+	#readingBookPageIcon,
+	#finishedBookPageIcon {
+		margin: 3rem;
+	}
+}

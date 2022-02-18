@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Maca - Bookshelf Apps by Muhammad Fauzul Hanif</title>
+	<link rel="stylesheet" href="./assets/css/index.css">
+	<link rel="icon" href="https://cdn-icons-png.flaticon.com/512/4484/4484751.png">
+	<link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body id="body" class="light-theme">
+	<div id="helpContainer">
+		<div id="help">
+			<div>
+				<h2>What am I? 📚</h2>
+				<button id="helpCloseIcon">
+					<i class="bx bx-x bx-sm"></i>
+				</button>
+			</div>
+			
+			<ul>
+				<li><strong>Maca</strong> is a website application for keeping a list of books that are currently being read and have been read. And the word "Maca" is taken from the Sundanese language which means "Read".</li>
+				<li>The technology used is HTML, CSS and JavaScript</li>
+				<li>Features :
+					<ol>
+						<li>Add books to bookshelf being read with book details like title, author and year.</li>
+						<li>See a list of books being read on the shelf.</li>
+						<li>See the list of finished books on the shelf.</li>
+						<li>Search for books by title, author and year on the shelf.</li>
+						<li>Move the book read to finished read and vice versa.</li>
+						<li>Delete the book if it is no longer needed.</li>
+						<li>Save book data to local storage in browser.</li>
+						<li>Switch light or dark theme mode.</li>
+						<li>Responsive on any device.</li>
+						<li>The layout created is the result of imagination and self-exploration.</li>
+					</ol>
+				</li>
+				<li>Contact in touch me :</li>
+				<div id="socialMedia">
+					<a href="https://www.facebook.com/muhammadfauzulhanif16"><i class='bx bxl-facebook'></i></a>
+					<a href="https://github.com/muhammadfauzulhanif16"><i class='bx bxl-github'></i></a>
+					<a href="mailto:muhammadfauzulhanif@gmail.com"><i class='bx bxl-google'></i></a>
+					<a href="https://www.instagram.com/muhammadfauzulhanif16"><i class='bx bxl-instagram'></i></a>
+					<a href="https://www.linkedin.com/in/muhammadfauzulhanif16"><i class='bx bxl-linkedin'></i></a>
+					<a href="https://t.me/muhammadfauzulhanif16"><i class='bx bxl-telegram'></i></a>
+					<a href="mailto:muhammadfauzulhanif@outlook.com"><i class='bx bxl-microsoft'></i></a>
+				</div>
+			</ul>
+		</div>
+	</div>
+	
+	<header id="header">
+		<nav>
+			<a class="brand" href="./index.html">
+				<h1>Maca</h1>
+			</a>
+			
+			<div style="display:flex;">
+				<div id="searchContainer" hidden>
+					<div id="inputSearch" hidden>
+						<label for="search"></label>
+						<input type="text" id="search" name="search" placeholder="Search book">
+					</div>
+					
+					<div>
+						<button id="themeIcon">
+							<i id="moonIcon" class="bx bx-moon bx-sm"></i>
+							<i id="sunIcon" class="bx bx-sun bx-sm"></i>
+						</button>
+						<button id="helpIcon">
+							<i class="bx bx-help-circle bx-sm"></i>
+						</button>
+					</div>
+					
+					<button id="searchIcon" hidden>
+						<i class="bx bx-search bx-sm"></i>
+					</button>
+					<button id="exitSearchIcon" hidden>
+						<i class="bx bx-x bx-sm"></i>
+					</button>
+				</div>
+			</div>
+		</nav>
+	</header>
+	
+	<main id="main">
+		<div class="display-flex" id="bookActionPageContainer">
+			<button class='tooltip' id="addBookPageIcon">
+				<i class="bx bx-plus bx-lg"></i>
+				<span class="tooltiptext">Add Book</span>
+			</button>
+			<button class='tooltip' id="readingBookPageIcon">
+				<i class="bx bx-book-open bx-lg"></i>
+				<span class="tooltiptext">Reading Book</span>
+			</button>
+			<button class='tooltip' id="finishedBookPageIcon">
+				<i class="bx bx-book bx-lg"></i>
+				<span class="tooltiptext">Finished Book</span>
+			</button>
+		</div>
+		
+		<section id="addBookPage" hidden>
+			<div>
+				<h2>Add Book</h2>
+				<button id="addBookPageCloseIcon">
+					<i class="bx bx-x bx-sm"></i>
+				</button>
+			</div>
+			
+			<form id="addBookForm">
+				<div class="input-group">
+					<label for="title">Title <strong>*</strong></label>
+					<input type="text" id="title" name="title" required>
+					<p id="messageTitle" hidden>Title can't be empty!</p>
+				</div>
+
+				<div class="input-group">
+					<label for="author">Author <strong>*</strong></label>
+					<input type="text" id="author" name="author" required>
+					<p id="messageAuthor" hidden>Author can't be empty!</p>
+				</div>
+				
+				<div class="input-group">
+					<label for="year">Year <strong>*</strong></label>
+					<input type="number" id="year" name="year" required>
+					<p id="messageYear" hidden>Year can't be empty!</p>
+				</div>
+				
+				<input type="submit" value="Submit" name="submit" id="submit">
+			</form>
+		</section>
+		
+		<section id="readingBookPage" hidden>
+			<div>
+				<h2>Reading Books</h2>
+				<button id="readingBookPageCloseIcon">
+					<i class="bx bx-x bx-sm"></i>
+				</button>
+			</div>
+			
+			<ul id="readingBookList"></ul>
+		</section>
+		
+		<section id="finishedBookPage" hidden>
+			<div>
+				<h2>Finished Books</h2>
+				<button id="finishedBookPageCloseIcon">
+					<i class="bx bx-x bx-sm"></i>
+				</button>
+			</div>
+			
+			<ul id="finishedBookList"></ul>
+		</section>
+	</main>
+	
+	<footer>
+		© Maca 2022, with <i class='bx bx-heart bx-tada'></i> by <u><a href="https://muhammadfauzulhanif.vercel.app">Muhammad Fauzul Hanif</a></u>. All rights reserved.
+	</footer>
+
+	<script src="assets/js/index.js"></script>
+	<script src="assets/js/storage.js"></script>
+	<script src="assets/js/page/home.js"></script>
+	<script src="assets/js/page/add.js"></script>
+	<script src="assets/js/page/reading.js"></script>
+	<script src="assets/js/page/finished.js"></script>
+	<script src="assets/js/book.js"></script>
+	<script src="assets/js/button.js"></script>
+	<script src="assets/js/search.js"></script>
+	<script src="assets/js/theme.js"></script>
+	<script src="assets/js/help.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+@import "form.css";
+
+#addBookPage {
+	z-index: 1;
+	width: 100%;
+	border-radius: 1rem;
+	padding: 0 1rem;
+}
+
+#addBookPage > div {
+	display:flex;
+	justify-content: space-between;
+	padding: 1rem 0;
+	align-items: center;
+}
+
+#addBookPage > div > h2 {
+	display:inline;
+	line-height: 0;
+}
+
+#addBookPageCloseIcon > i {
+	padding: .5rem;
+	border-radius: .75rem;
+}
+
+@media only screen and (min-width: 30em) {
+	#addBookPage {
+		width: 75%;
+	}
+}
+
+@media only screen and (min-width: 48em) {
+	#addBookPage {
+		z-index: 2;
+		width: 50%;
+	}
+	
+	#addBookPageCloseIcon > i {
+		padding: .75rem;
+		border-radius: 1rem;
+	}
+}

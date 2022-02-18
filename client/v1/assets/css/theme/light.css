@@ -1,0 +1,98 @@
+/*---------- background color ----------*/
+/*---------- light ----------*/
+.light-theme,
+.light-theme input,
+.light-theme > header,
+.light-theme > footer,
+.light-theme #readingBookPage > div,
+.light-theme #finishedBookPage > div {
+	background-color: #F7FAFC;
+}
+
+.light-theme #help,
+.light-theme #help > div,
+.light-theme .book-item {
+	background-color: #EDF2F7;
+}
+/*---------- light ----------*/
+
+/*---------- dark ----------*/
+.light-theme #sunIcon:hover,
+.light-theme #helpIcon:hover > i,
+.light-theme #helpCloseIcon:hover > i,
+.light-theme #moonIcon:hover,
+.light-theme #searchIcon:hover > i,
+.light-theme #exitSearchIcon:hover > i,
+.light-theme #addBookPageIcon:hover > i,
+.light-theme input[type="submit"]:hover,
+.light-theme #addBookPageIcon:hover > span,
+.light-theme #readingBookPageIcon:hover > i,
+.light-theme #addBookPageCloseIcon:hover > i,
+.light-theme #finishedBookPageIcon:hover > i,
+.light-theme #readingBookPageIcon:hover > span,
+.light-theme #finishedBookPageIcon:hover > span,
+.light-theme #readingBookPageCloseIcon:hover > i,
+.light-theme #finishedBookPageCloseIcon:hover > i,
+.light-theme::-webkit-scrollbar-thumb,
+.light-theme #help::-webkit-scrollbar-thumb {
+	background-color: #171923;
+}
+
+#help {
+	box-shadow: 0 0 1rem .5rem rgba(247,250,252,0.1);
+}
+/*---------- dark ----------*/
+/*---------- background color ----------*/
+
+
+
+/*---------- font color ----------*/
+/*---------- light ----------*/
+.light-theme #sunIcon:hover,
+.light-theme #helpIcon:hover > i,
+.light-theme #helpCloseIcon:hover > i,
+.light-theme #moonIcon:hover,
+.light-theme #searchIcon:hover > i,
+.light-theme #exitSearchIcon:hover > i,
+.light-theme #addBookPageIcon:hover > i,
+.light-theme input[type="submit"]:hover,
+.light-theme #addBookPageIcon:hover > span,
+.light-theme #readingBookPageIcon:hover > i,
+.light-theme #addBookPageCloseIcon:hover > i,
+.light-theme #finishedBookPageIcon:hover > i,
+.light-theme #readingBookPageIcon:hover > span,
+.light-theme #finishedBookPageIcon:hover > span,
+.light-theme #readingBookPageCloseIcon:hover > i,
+.light-theme #finishedBookPageCloseIcon:hover > i {
+	color: #f7fafc;
+}
+/*---------- light ----------*/
+
+/*---------- dark ----------*/
+.light-theme,
+.light-theme a,
+.light-theme input,
+.light-theme #sunIcon,
+.light-theme #helpIcon > i,
+.light-theme #helpCloseIcon > i,
+.light-theme #moonIcon,
+.light-theme #searchIcon > i,
+.light-theme #exitSearchIcon > i,
+.light-theme #addBookPageIcon > i,
+.light-theme .tooltip .tooltiptext,
+.light-theme #readingBookPageIcon > i,
+.light-theme #addBookPageCloseIcon > i,
+.light-theme #finishedBookPageIcon > i,
+.light-theme #readingBookPageCloseIcon > i,
+.light-theme #finishedBookPageCloseIcon > i {
+	color: #171923;
+}
+/*---------- dark ----------*/
+
+.light-theme #deleteBookIcon:hover,
+.light-theme #editBookIcon:hover,
+.light-theme #readingBookIcon:hover,
+.light-theme #finishedBookIcon:hover {
+	color: #EDF2F7;
+}
+/*---------- font color ----------*/

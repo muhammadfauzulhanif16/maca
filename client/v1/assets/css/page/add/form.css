@@ -1,0 +1,61 @@
+.input-group {
+	position: relative;
+	margin-bottom: 1rem;
+	display: flex;
+	flex-direction: column;
+}
+
+label {
+	font-weight: 700;
+}
+
+#title,
+#author,
+#year {
+	margin-bottom: 2rem;
+}
+
+#addBookForm strong {
+	color: #FC8181;
+}
+
+input {
+	font-weight: 600;
+	padding: .5rem;
+	box-shadow: none;
+	border: none;
+	border-bottom: .125rem solid;
+}
+
+input:focus {
+	outline: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+#messageTitle,
+#messageAuthor,
+#messageYear {
+	color: #FC8181;
+	line-height: 0;
+	position: absolute;
+	bottom: 0;
+}
+
+input[type="submit"] {
+	font-weight: 700;
+	width: 100%;
+	padding: 1rem;
+	margin-bottom: 0;
+	border-bottom: none;
+	border-radius: 1rem;
+}
+
+input[type="submit"]:hover {
+	cursor: not-allowed;
+	border-radius: 1rem;
+}
