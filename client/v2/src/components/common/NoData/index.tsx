@@ -1,12 +1,12 @@
 import { FC } from "react";
 import { Icon } from "../Icon";
 
-interface Props {
+interface NoDataProps {
   icon: string;
   title: string;
 }
 
-export const NoData: FC<Props> = ({ icon, title }) => {
+export const NoData: FC<NoDataProps> = ({ icon, title }): JSX.Element => {
   return (
     <Icon
       icon={icon}

@@ -1,12 +1,12 @@
 import { FC } from "react";
 import { Field } from "formik";
 
-interface Props {
+interface InputFormProps {
   label: string;
   type: string;
 }
 
-export const InputForm: FC<Props> = ({ label, type }) => {
+export const InputForm: FC<InputFormProps> = ({ label, type }): JSX.Element => {
   const identifier =
     type !== "checkbox" ? label.toLowerCase() : `is_${label.toLowerCase()}`;
 

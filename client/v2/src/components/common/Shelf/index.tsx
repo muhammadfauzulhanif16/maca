@@ -1,24 +1,26 @@
 import { FC } from "react";
 import { BookItem } from "../BookItem";
 
-interface Props {
+interface ShelfProps {
   books: any;
 }
 
-interface BookType {
+interface BookState {
   title: string;
   author: string;
   year: string;
 }
 
-export const Shelf: FC<Props> = ({ books }) => {
+export const Shelf: FC<ShelfProps> = ({ books }): JSX.Element => {
   return (
     <ul
       className={`transition-all duration-500 ease-in-out grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 p-4 sm:p-6 md:p-8`}
     >
-      {books.map(({ title, author, year }: BookType, id: number) => (
-        <BookItem key={id} title={title} author={author} year={year} />
-      ))}
+      {books.map(
+        ({ title, author, year }: BookState, id: number): JSX.Element => (
+          <BookItem key={id} title={title} author={author} year={year} />
+        )
+      )}
     </ul>
   );
 };

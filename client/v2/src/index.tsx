@@ -2,7 +2,7 @@ import { render } from "react-dom";
 import { StrictMode } from "react";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
-import "./index.css";
+import "./index.scss";
 import App from "./App";
 import { store } from "./store";
 import reportWebVitals from "./reportWebVitals";
@@ -10,11 +10,11 @@ import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 
 render(
   <StrictMode>
-    <BrowserRouter>
-      <Provider store={store}>
+    <Provider store={store}>
+      <BrowserRouter>
         <App />
-      </Provider>
-    </BrowserRouter>
+      </BrowserRouter>
+    </Provider>
   </StrictMode>,
   document.getElementById("root")
 );

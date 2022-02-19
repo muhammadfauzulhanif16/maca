@@ -10,14 +10,14 @@ interface FinishedComponentProps {
 
 export const FinishedComponent: FC<FinishedComponentProps> = ({
   titlePage,
-}) => {
+}): JSX.Element => {
   const dispatch = useDispatch(),
     { books, isLoading } = useSelector(({ book }: RootState) => book),
     [scrollTop, setScrollTop] = useState<boolean>(false),
     scroolHeight = () => {
       window.scrollY >= 32 ? setScrollTop(true) : setScrollTop(false);
     },
-    finished = books?.filter(({ is_completed }: any) => {
+    finished = books.filter(({ is_completed }: any) => {
       return is_completed === true;
     });
 

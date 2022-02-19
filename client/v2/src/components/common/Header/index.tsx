@@ -1,41 +1,42 @@
 import { FC } from "react";
 import { Link } from "react-router-dom";
 import { Icon } from "../Icon";
-import "./index.css";
+import "./index.scss";
 
-interface Props {
+export interface HeaderProps {
   fixed?: boolean;
   title?: string;
   count?: number;
 }
 
-export const Header: FC<Props> = ({ fixed, title, count }) => {
+export const Header: FC<HeaderProps> = ({
+  fixed,
+  title,
+  count,
+}): JSX.Element => {
   return (
-    <header className={`${fixed ? "header-fixed" : "header-sticky"}`}>
+    <header className={`${fixed ? "fixed" : "sticky"}`}>
       <div
         className={`${title ? "border-b-2" : ""} ${
           fixed ? "" : "py-4 sm:py-6 md:py-8"
-        } py-4 sm:py-6 md:py-8 w-full grid grid-cols-1 sm:grid-cols-3`}
+        } header-container`}
       >
         <div className="grid grid-cols-2">
           <Link to="/" className="text-5xl font-bold">
             Maca
           </Link>
 
+          {/* small */}
           {title ? (
             <div className="flex sm:hidden justify-end items-center">
-              <Icon
-                icon="x"
-                size="sm"
-                className="p-2 rounded-xl hover:bg-slate-900 dark:hover:bg-slate-50"
-                link="/"
-              />
+              <Icon icon="x" size="sm" className="icon" link="/" />
             </div>
           ) : (
             ""
           )}
         </div>
 
+        {/* small */}
         {title ? (
           <div className="flex justify-between sm:hidden">
             <div className="flex items-center">
@@ -44,18 +45,14 @@ export const Header: FC<Props> = ({ fixed, title, count }) => {
             </div>
 
             <div className="flex justify-end items-center">
-              <Icon
-                icon="search"
-                size="sm"
-                className="p-2 rounded-xl hover:bg-slate-900 dark:hover:bg-slate-50"
-                link="/"
-              />
+              <Icon icon="search" size="sm" className="icon" link="/" />
             </div>
           </div>
         ) : (
           ""
         )}
 
+        {/* large */}
         {title ? (
           <>
             <div className="hidden sm:flex items-center justify-center">
@@ -64,19 +61,9 @@ export const Header: FC<Props> = ({ fixed, title, count }) => {
             </div>
 
             <div className="hidden sm:flex justify-end items-center">
-              <Icon
-                icon="search"
-                size="sm"
-                className="p-2 rounded-xl hover:bg-slate-900 dark:hover:bg-slate-50"
-                link="/"
-              />
+              <Icon icon="search" size="sm" className="icon" link="/" />
 
-              <Icon
-                icon="x"
-                size="sm"
-                className="ml-2 p-2 rounded-xl hover:bg-slate-900 dark:hover:bg-slate-50"
-                link="/"
-              />
+              <Icon icon="x" size="sm" className="ml-2 icon" link="/" />
             </div>
           </>
         ) : (

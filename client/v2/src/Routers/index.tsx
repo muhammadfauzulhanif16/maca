@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import {
   HomePage,
   AddPage,
@@ -6,9 +7,13 @@ import {
   NotFoundPage,
 } from "../pages";
 
-interface RoutersState {
-  element: any;
+export interface RoutersState {
+  element: ReactNode;
   path: string;
+}
+
+export interface PageProps {
+  titlePage: string;
 }
 
 export const Routers: RoutersState[] = [
@@ -17,15 +22,15 @@ export const Routers: RoutersState[] = [
     path: "",
   },
   {
-    element: <AddPage />,
+    element: <AddPage titlePage="Add" />,
     path: "add",
   },
   {
-    element: <ReadingPage />,
+    element: <ReadingPage titlePage="Reading" />,
     path: "reading",
   },
   {
-    element: <FinishedPage />,
+    element: <FinishedPage titlePage="Finished" />,
     path: "finished",
   },
   {

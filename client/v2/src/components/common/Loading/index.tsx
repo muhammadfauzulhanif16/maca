@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Icon } from "../Icon";
 
-export const Loading: FC<{}> = () => {
+export const Loading: FC<{}> = (): JSX.Element => {
   return (
     <Icon
       icon="loader-circle"

@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Link } from "react-router-dom";
 
-interface Props {
+interface IconProps {
   icon?: string;
   className?: string;
   size?: string;
@@ -11,7 +11,7 @@ interface Props {
   onClick?: () => void;
 }
 
-export const Icon: FC<Props> = ({
+export const Icon: FC<IconProps> = ({
   icon,
   size,
   title,
@@ -19,7 +19,7 @@ export const Icon: FC<Props> = ({
   className,
   animation,
   onClick,
-}) => {
+}): JSX.Element => {
   return (
     <>
       {link ? (
@@ -31,15 +31,7 @@ export const Icon: FC<Props> = ({
             className={`group-hover:animate-bounce bx bx-${icon} bx-${size}`}
           />
 
-          {title ? (
-            <>
-              <br />
-
-              <p className="font-medium">{title}</p>
-            </>
-          ) : (
-            ""
-          )}
+          <p className="font-medium">{title}</p>
         </Link>
       ) : (
         <div
@@ -54,15 +46,7 @@ export const Icon: FC<Props> = ({
             className={`group-hover:animate-bounce bx bx-${icon} bx-${size} bx-${animation}`}
           />
 
-          {title ? (
-            <>
-              <br />
-
-              <p className="font-medium text-xl">{title}</p>
-            </>
-          ) : (
-            ""
-          )}
+          <p className="font-medium text-xl">{title}</p>
         </div>
       )}
     </>

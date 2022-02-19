@@ -1,4 +1,4 @@
-interface InputsState {
+export interface InputsState {
   label: string;
   type: string;
 }

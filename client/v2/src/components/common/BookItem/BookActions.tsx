@@ -1,19 +1,19 @@
-interface Type {
+export interface BookActionsState {
   icon: string;
   bgColor: string;
 }
 
-export const BookActions: Type[] = [
+export const BookActions: BookActionsState[] = [
   {
     icon: "book",
-    bgColor: "sky-300",
+    bgColor: "hover:bg-sky-300",
   },
   {
     icon: "edit",
-    bgColor: "amber-300",
+    bgColor: "hover:bg-amber-300",
   },
   {
     icon: "trash",
-    bgColor: "rose-300",
+    bgColor: "hover:bg-rose-300",
   },
 ];
