@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Icon } from "../Icon";
 
-export const ScrollTop: FC<{}> = () => {
+export const ScrollTop: FC<{}> = (): JSX.Element => {
   const ScrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };

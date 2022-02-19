@@ -8,7 +8,9 @@ interface ReadingComponentProps {
   titlePage: string;
 }
 
-export const ReadingComponent: FC<ReadingComponentProps> = ({ titlePage }) => {
+export const ReadingComponent: FC<ReadingComponentProps> = ({
+  titlePage,
+}): JSX.Element => {
   const dispatch = useDispatch(),
     { books, isLoading } = useSelector(({ book }: RootState) => book),
     [scrollTop, setScrollTop] = useState<boolean>(false),
@@ -16,7 +18,7 @@ export const ReadingComponent: FC<ReadingComponentProps> = ({ titlePage }) => {
       window.scrollY >= 32 ? setScrollTop(true) : setScrollTop(false);
     },
     reading = books?.filter(({ is_completed }: any) => {
-      return is_completed === true;
+      return is_completed === false;
     });
 
   window.addEventListener("scroll", scroolHeight);

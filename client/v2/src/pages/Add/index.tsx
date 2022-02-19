@@ -1,6 +1,7 @@
 import { FC } from "react";
-import { AddComponent } from "../../components/Add";
+import { AddComponent } from "../../components";
+import { PageProps } from "../../Routers";
 
-export const AddPage: FC<{}> = () => {
-  return <AddComponent titlePage="Add" />;
+export const AddPage: FC<PageProps> = ({ titlePage }): JSX.Element => {
+  return <AddComponent titlePage={titlePage} />;
 };
