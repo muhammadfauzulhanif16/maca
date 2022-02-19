@@ -11,7 +11,7 @@ export {
 } from "./common";
 
 // pages
-export { AddComponent } from "./Add";
+// export { AddComponent } from "./Add";
 export { FinishedComponent } from "./Finished";
 export { HomeComponent } from "./Home";
 export { NotFoundComponent } from "./NotFound";
