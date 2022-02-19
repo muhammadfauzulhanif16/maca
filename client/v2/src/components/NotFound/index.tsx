@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Icon } from "../common/Icon";
 
-export const NotFoundComponent: FC<{}> = (): JSX.Element => {
+export const NotFoundComponent: FC<{}> = () => {
   return (
     <div className="flex justify-center flex-col items-center text-slate-300 h-screen">
       <Icon icon="search" size="lg" title="404" className="p-0" />

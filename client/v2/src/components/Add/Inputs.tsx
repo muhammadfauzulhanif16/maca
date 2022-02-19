@@ -1,9 +1,9 @@
-interface InputsState {
-  label: string;
-  type: string;
-}
+// interface InputsState {
+//   label: string;
+//   type: string;
+// }
 
-export const Inputs: InputsState[] = [
+export const Inputs = [
   { label: "Title", type: "text" },
   { label: "Author", type: "text" },
   { label: "Year", type: "number" },

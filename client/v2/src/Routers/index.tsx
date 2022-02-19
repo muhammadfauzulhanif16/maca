@@ -6,12 +6,12 @@ import {
   NotFoundPage,
 } from "../pages";
 
-interface RoutersState {
-  element: any;
-  path: string;
-}
+// interface RoutersState {
+//   element: any;
+//   path: string;
+// }
 
-export const Routers: RoutersState[] = [
+export const Routers = [
   {
     element: <HomePage />,
     path: "",

@@ -15,7 +15,7 @@ export const AddComponent: FC<AddComponentProps> = ({ titlePage }) => {
     { books } = useSelector(({ book }: RootState) => book);
 
   return (
-    <div className="">
+    <>
       <Header title={titlePage} count={books.length} />
 
       <Formik
@@ -45,6 +45,6 @@ export const AddComponent: FC<AddComponentProps> = ({ titlePage }) => {
           </Form>
         </div>
       </Formik>
-    </div>
+    </>
   );
 };
