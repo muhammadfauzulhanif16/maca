@@ -1,8 +1,8 @@
 // import { BOOK } from "../types";
-import { createSlice, PayloadAction, createAsyncThunk } from "@reduxjs/toolkit";
-import { RootState } from "../../store";
-import { API } from "../../API";
-import { BOOK } from "../types";
+// import { createSlice, PayloadAction, createAsyncThunk } from "@reduxjs/toolkit";
+// import { RootState } from "../../store";
+// import { API } from "../../API";
+import { BOOK, BOOKS } from "../types";
 import { LOADING } from "../types";
 
 // export const createBookAct = createAsyncThunk(
@@ -29,15 +29,16 @@ import { LOADING } from "../types";
 
 interface BookState {
   isLoading: boolean;
-  book: {};
-  books: {};
-  // search: string;
+  // book: {};
+  books: [];
+  isCompleted: string;
 }
 
 const initialState: BookState = {
-  isLoading: true,
-  book: {},
+  isLoading: false,
+  // book: {},
   books: [],
+  isCompleted: "",
 };
 
 export const bookReducer = (state = initialState, action: any) => {
@@ -45,16 +46,38 @@ export const bookReducer = (state = initialState, action: any) => {
   // console.log("action value", action);
 
   switch (action.type) {
-    // case LOADING:
+    case LOADING.START:
+      return {
+        ...state,
+        isLoading: true,
+      };
+    // case BOOK.CREATE:
     //   return {
     //     ...state,
-    //     isLoading: true,
+    //     isLoading: false,
+    //     book: action.payload,
     //   };
-    case BOOK.READ:
+    case BOOKS.READ:
       return {
         ...state,
         isLoading: false,
         books: action.payload,
+      };
+    case BOOK.UPDATE.IS_COMPLETED:
+      return {
+        ...state,
+        isLoading: false,
+        isCompleted: "Berhasil ubah status",
+      };
+    case BOOK.DELETE:
+      return {
+        ...state,
+        isLoading: false,
+      };
+    case LOADING.STOP:
+      return {
+        ...state,
+        isLoading: false,
       };
     default:
       return state;
