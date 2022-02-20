@@ -29,7 +29,7 @@ export const AddComponent: FC<AddComponentProps> = ({
   titlePage,
 }): JSX.Element => {
   const dispatch = useDispatch(),
-    { books } = useSelector(({ book }: RootState) => book);
+    { books } = useSelector(({ bookReducer }: RootState) => bookReducer);
 
   return (
     <>
