@@ -1,31 +1,92 @@
 import { FC, useState } from "react";
+import { useDispatch } from "react-redux";
+import {
+  updateIsCompletedAct,
+  deleteBookAct,
+} from "../../../store/actions/book";
 import { Icon } from "../Icon";
-import { BookActions, BookActionsState } from "./BookActions";
 import "./index.scss";
 
 interface BookItemProps {
+  BookId: number;
   title: string;
   author: string;
   year: string;
 }
 
+interface DetailsState {
+  title: string;
+  data: any;
+}
+
+interface ActionsState {
+  icon: string;
+  bgColor: string;
+  onClick?: () => void;
+}
+
 export const BookItem: FC<BookItemProps> = ({
+  BookId,
   title,
   author,
   year,
 }): JSX.Element => {
-  const [action, setAction] = useState<boolean>(false),
-    handleAction = () => {
+  const dispatch = useDispatch(),
+    [action, setAction] = useState<boolean>(false),
+    handleAction = (): void => {
       setAction(!action);
-    };
+    },
+    handleIsCompleted = (BookId: number): void => {
+      dispatch(updateIsCompletedAct(BookId));
+    },
+    handleDelete = (BookId: number): void => {
+      dispatch(deleteBookAct(BookId));
+    },
+    Details: DetailsState[] = [
+      {
+        title: "Author",
+        data: author,
+      },
+      {
+        title: "Year",
+        data: year,
+      },
+    ],
+    Actions: ActionsState[] = [
+      {
+        icon: "book",
+        bgColor: "sky",
+        onClick: () => {
+          return handleIsCompleted(BookId);
+        },
+      },
+      {
+        icon: "edit",
+        bgColor: "amber",
+      },
+      {
+        icon: "trash",
+        bgColor: "rose",
+        onClick: () => {
+          return handleDelete(BookId);
+        },
+      },
+    ];
 
   return (
     <li>
       <>
         <h3>{title}</h3>
 
-        <span className="detail mt-4 sm:mt-6 md:mt-8">Author: {author}</span>
-        <span className="detail mb-4 sm:mb-6 md:mb-8">Year : {year}</span>
+        <div className="my-4 sm:my-6 md:my-8">
+          {Details.map(
+            ({ title, data }: DetailsState): JSX.Element => (
+              <p className="detail">
+                {title}: {data}
+              </p>
+            )
+          )}
+        </div>
       </>
 
       <Icon
@@ -37,14 +98,17 @@ export const BookItem: FC<BookItemProps> = ({
 
       <div className={`${!action ? "hidden" : "flex"} action-container`}>
         <div className="actions">
-          {BookActions.map(
-            ({ icon, bgColor }: BookActionsState, id: number): JSX.Element => (
+          {Actions.map(
+            (
+              { icon, bgColor, onClick }: ActionsState,
+              id: number
+            ): JSX.Element => (
               <Icon
                 key={id}
                 icon={icon}
                 size="sm"
-                onClick={handleAction}
-                className={`p-2 sm:p-4 rounded-xl ${bgColor}`}
+                onClick={onClick}
+                className={`p-2 sm:p-4 rounded-xl hover:bg-${bgColor}-300`}
               />
             )
           )}
