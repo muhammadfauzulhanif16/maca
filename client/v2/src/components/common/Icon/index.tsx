@@ -8,7 +8,7 @@ interface IconProps {
   title?: string;
   link?: string;
   animation?: string;
-  onClick?: () => void;
+  onClick?: any;
 }
 
 export const Icon: FC<IconProps> = ({
