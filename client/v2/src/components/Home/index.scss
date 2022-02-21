@@ -3,9 +3,5 @@
 
   .page-icons-container {
     @apply grid sm:grid-cols-3 gap-4 sm:gap-8 md:gap-16;
-
-    .icon {
-      @apply p-8 rounded-3xl hover:bg-slate-900 dark:hover:bg-slate-50;
-    }
   }
 }

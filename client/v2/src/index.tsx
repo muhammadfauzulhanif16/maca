@@ -1,8 +1,8 @@
 import { render } from "react-dom";
 import { StrictMode } from "react";
 import { Provider } from "react-redux";
-import { BrowserRouter } from "react-router-dom";
-import "./index.css";
+import { BrowserRouter as Router } from "react-router-dom";
+import "./index.scss";
 import App from "./App";
 import { store } from "./store";
 import reportWebVitals from "./reportWebVitals";
@@ -11,9 +11,9 @@ import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 render(
   <StrictMode>
     <Provider store={store}>
-      <BrowserRouter>
+      <Router>
         <App />
-      </BrowserRouter>
+      </Router>
     </Provider>
   </StrictMode>,
   document.getElementById("root")

@@ -43,10 +43,6 @@ export const Header: FC<HeaderProps> = ({
               <h1 className="text-2xl font-bold mr-4">{`${title} Book`}</h1>
               <span>({count})</span>
             </div>
-
-            <div className="flex justify-end items-center">
-              <Icon icon="search" size="sm" className="icon" link="/" />
-            </div>
           </div>
         ) : (
           ""
@@ -61,8 +57,6 @@ export const Header: FC<HeaderProps> = ({
             </div>
 
             <div className="hidden sm:flex justify-end items-center">
-              <Icon icon="search" size="sm" className="icon" link="/" />
-
               <Icon icon="x" size="sm" className="ml-2 icon" link="/" />
             </div>
           </>

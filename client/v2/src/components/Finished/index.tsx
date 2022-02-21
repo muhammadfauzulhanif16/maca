@@ -5,17 +5,14 @@ import { FC } from "react";
 
 interface FinishedComponentProps {
   titlePage: string;
+  books: [];
+  isLoading: boolean;
 }
 
 export const FinishedComponent: FC<FinishedComponentProps> = ({
   titlePage,
+  books,
+  isLoading,
 }): JSX.Element => {
-  const { books, isLoading } = useSelector(
-      ({ bookReducer }: RootState) => bookReducer
-    ),
-    finished = books?.filter(({ is_completed }: any) => {
-      return is_completed === true;
-    });
-
-  return <Shelf titlePage={titlePage} books={finished} isLoading={isLoading} />;
+  return <Shelf titlePage={titlePage} books={books} isLoading={isLoading} />;
 };

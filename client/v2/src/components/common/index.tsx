@@ -6,3 +6,4 @@ export { Loading } from "./Loading";
 export { NoData } from "./NoData";
 export { ScrollTop } from "./ScrollTop";
 export { Shelf } from "./Shelf";
+export { Message } from "./Message";
