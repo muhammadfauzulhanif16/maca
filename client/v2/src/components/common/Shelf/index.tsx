@@ -1,9 +1,6 @@
 import { Header, Loading, NoData, ScrollTop } from "../../common";
-import { useDispatch } from "react-redux";
 import { FC, useEffect, useState } from "react";
-import { readAllBooksAct } from "../../../store/actions/book";
 import { BookItem } from "../BookItem";
-
 interface ShelfProps {
   titlePage: string;
   books: [];
@@ -22,8 +19,7 @@ export const Shelf: FC<ShelfProps> = ({
   books,
   isLoading,
 }): JSX.Element => {
-  const dispatch = useDispatch(),
-    [scrollTop, setScrollTop] = useState<boolean>(false),
+  const [scrollTop, setScrollTop] = useState<boolean>(false),
     scroolHeight = () => {
       window.scrollY >= 32 ? setScrollTop(true) : setScrollTop(false);
     };
@@ -31,11 +27,9 @@ export const Shelf: FC<ShelfProps> = ({
   window.addEventListener("scroll", scroolHeight);
 
   useEffect(() => {
-    dispatch(readAllBooksAct());
-
     scroolHeight();
     return () => setScrollTop(false);
-  }, [dispatch]);
+  }, []);
 
   return (
     <>

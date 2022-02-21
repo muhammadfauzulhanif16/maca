@@ -16,7 +16,7 @@ interface BookItemProps {
 
 interface DetailsState {
   title: string;
-  data: any;
+  data: string;
 }
 
 interface ActionsState {
@@ -55,20 +55,22 @@ export const BookItem: FC<BookItemProps> = ({
     Actions: ActionsState[] = [
       {
         icon: "book",
-        bgColor: "sky",
+        bgColor: "hover:bg-sky-300",
         onClick: () => {
-          return handleIsCompleted(BookId);
+          setAction(false);
+          handleIsCompleted(BookId);
         },
       },
       {
         icon: "edit",
-        bgColor: "amber",
+        bgColor: "hover:bg-amber-300",
       },
       {
         icon: "trash",
-        bgColor: "rose",
+        bgColor: "hover:bg-rose-300",
         onClick: () => {
-          return handleDelete(BookId);
+          setAction(false);
+          handleDelete(BookId);
         },
       },
     ];
@@ -80,8 +82,8 @@ export const BookItem: FC<BookItemProps> = ({
 
         <div className="my-4 sm:my-6 md:my-8">
           {Details.map(
-            ({ title, data }: DetailsState): JSX.Element => (
-              <p className="detail">
+            ({ title, data }: DetailsState, id: number): JSX.Element => (
+              <p className="detail" key={id}>
                 {title}: {data}
               </p>
             )
@@ -108,7 +110,7 @@ export const BookItem: FC<BookItemProps> = ({
                 icon={icon}
                 size="sm"
                 onClick={onClick}
-                className={`p-2 sm:p-4 rounded-xl hover:bg-${bgColor}-300`}
+                className={`p-2 sm:p-4 rounded-xl ${bgColor}`}
               />
             )
           )}

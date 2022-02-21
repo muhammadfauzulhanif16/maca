@@ -3,6 +3,11 @@ export const LOADING = {
   STOP: "STOP",
 };
 
+export const MESSAGE = {
+  SUCCESS: "SUCCESS",
+  ERROR: "ERROR",
+};
+
 export const BOOK = {
   CREATE: "CREATE",
   UPDATE: {

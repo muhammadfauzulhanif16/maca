@@ -8,6 +8,7 @@ export {
   NoData,
   ScrollTop,
   Shelf,
+  Message,
 } from "./common";
 
 // pages

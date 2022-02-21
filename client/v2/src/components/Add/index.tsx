@@ -9,6 +9,7 @@ import "./index.scss";
 
 interface AddComponentProps {
   titlePage?: string;
+  books: [];
 }
 
 interface initialValuesState {
@@ -27,9 +28,9 @@ const initialValues: initialValuesState = {
 
 export const AddComponent: FC<AddComponentProps> = ({
   titlePage,
+  books,
 }): JSX.Element => {
-  const dispatch = useDispatch(),
-    { books } = useSelector(({ bookReducer }: RootState) => bookReducer);
+  const dispatch = useDispatch();
 
   return (
     <>

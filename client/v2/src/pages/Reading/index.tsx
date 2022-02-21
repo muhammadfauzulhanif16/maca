@@ -1,7 +1,22 @@
 import { FC } from "react";
 import { ReadingComponent } from "../../components/Reading";
-import { PageProps } from "../../Routers";
 
-export const ReadingPage: FC<PageProps> = ({ titlePage }): JSX.Element => {
-  return <ReadingComponent titlePage={titlePage} />;
+interface PageProps {
+  titlePage: string;
+  books: [];
+  isLoading: boolean;
+}
+
+export const ReadingPage: FC<PageProps> = ({
+  titlePage,
+  books,
+  isLoading,
+}): JSX.Element => {
+  return (
+    <ReadingComponent
+      titlePage={titlePage}
+      books={books}
+      isLoading={isLoading}
+    />
+  );
 };

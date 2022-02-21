@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { Footer } from "../Footer";
 import { Icon } from "../Icon";
 
 export const Loading: FC<{}> = (): JSX.Element => {
