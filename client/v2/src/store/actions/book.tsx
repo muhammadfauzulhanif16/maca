@@ -73,6 +73,8 @@ export const updateIsCompletedAct = (id: number) => async (dispatch: any) => {
       url: `/book/update/is_completed/${id}`,
     });
 
+    console.log(response);
+
     dispatch({
       type: MESSAGE.SUCCESS,
       payload: "Successfully to change a book status",
@@ -101,6 +103,8 @@ export const deleteBookAct = (id: number) => async (dispatch: any) => {
       method: "DELETE",
       url: `/book/delete/${id}`,
     });
+
+    console.log(response);
 
     dispatch({
       type: MESSAGE.SUCCESS,

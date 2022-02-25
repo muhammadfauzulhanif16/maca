@@ -1,9 +1,8 @@
 import { FC } from "react";
 import { Icon } from "../common/Icon";
 import { Header } from "../common/Header";
-import "./index.scss";
+import "./index.css";
 import { Footer } from "../common/Footer";
-import { Loading } from "../common";
 
 interface PageIconsState {
   icon: string;

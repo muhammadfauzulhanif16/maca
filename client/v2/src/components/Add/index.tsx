@@ -1,11 +1,10 @@
 import { FC } from "react";
 import { Formik, Form } from "formik";
-import { useDispatch, useSelector } from "react-redux";
 import { Inputs, InputsState } from "./Inputs";
-import { RootState } from "../../store";
 import { createBookAct } from "../../store/actions/book";
 import { Header, InputForm } from "../../components";
-import "./index.scss";
+import "./index.css";
+import { useDispatch } from "react-redux";
 
 interface AddComponentProps {
   titlePage?: string;

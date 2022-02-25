@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Field } from "formik";
-import "./index.scss";
+import "./index.css";
 
 interface InputFormProps {
   label: string;

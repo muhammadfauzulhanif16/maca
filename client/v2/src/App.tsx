@@ -67,7 +67,7 @@ const App: FC<{}> = (): JSX.Element => {
 
   useEffect(() => {
     dispatch(readAllBooksAct());
-  }, []);
+  }, [dispatch]);
 
   return (
     <>

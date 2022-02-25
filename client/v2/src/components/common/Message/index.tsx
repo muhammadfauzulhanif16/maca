@@ -1,6 +1,6 @@
 import { FC, useEffect, useState } from "react";
 import { Icon } from "../Icon";
-import "./index.scss";
+import "./index.css";
 
 interface MessageProps {
   success: string;

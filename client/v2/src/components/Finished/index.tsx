@@ -1,6 +1,4 @@
 import { Shelf } from "../common";
-import { useSelector } from "react-redux";
-import { RootState } from "../../store";
 import { FC } from "react";
 
 interface FinishedComponentProps {

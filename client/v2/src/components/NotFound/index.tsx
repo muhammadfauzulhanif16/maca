@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Icon } from "../common/Icon";
-import "./index.scss";
+import "./index.css";
 
 export const NotFoundComponent: FC<{}> = (): JSX.Element => {
   return (

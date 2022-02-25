@@ -5,7 +5,7 @@ import {
   deleteBookAct,
 } from "../../../store/actions/book";
 import { Icon } from "../Icon";
-import "./index.scss";
+import "./index.css";
 
 interface BookItemProps {
   BookId: number;
@@ -60,10 +60,6 @@ export const BookItem: FC<BookItemProps> = ({
           setAction(false);
           handleIsCompleted(BookId);
         },
-      },
-      {
-        icon: "edit",
-        bgColor: "hover:bg-amber-300",
       },
       {
         icon: "trash",

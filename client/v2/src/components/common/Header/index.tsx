@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Link } from "react-router-dom";
 import { Icon } from "../Icon";
-import "./index.scss";
+import "./index.css";
 
 export interface HeaderProps {
   fixed?: boolean;

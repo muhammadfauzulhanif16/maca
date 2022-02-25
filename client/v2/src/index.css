@@ -5,3 +5,11 @@
 html {
   @apply bg-slate-50 dark:bg-slate-900 text-slate-900 select-none;
 }
+
+::-webkit-scrollbar {
+  @apply w-3;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-900 rounded-full;
+}
