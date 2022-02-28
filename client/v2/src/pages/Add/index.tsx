@@ -1,11 +1,6 @@
 import { FC } from "react";
-import { AddComponent } from "../../components";
+import { AddComponent } from "../../components/Add";
 
-interface PageProps {
-  titlePage: string;
-  books: [];
-}
-
-export const AddPage: FC<PageProps> = ({ titlePage, books }): JSX.Element => {
-  return <AddComponent titlePage={titlePage} books={books} />;
+export const AddPage: FC<{}> = (): JSX.Element => {
+  return <AddComponent />;
 };
