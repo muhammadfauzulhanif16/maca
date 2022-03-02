@@ -1,6 +1,10 @@
 import { FC } from "react";
-import { FinishedComponent } from "../../components/Finished";
+import { FinishedComponent } from "../../features";
 
 export const FinishedPage: FC<{}> = (): JSX.Element => {
-  return <FinishedComponent />;
+  return (
+    <>
+      <FinishedComponent />
+    </>
+  );
 };

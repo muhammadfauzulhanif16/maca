@@ -1,6 +1,10 @@
 import { FC } from "react";
-import { ReadingComponent } from "../../components/Reading";
+import { ReadingComponent } from "../../features";
 
 export const ReadingPage: FC<{}> = (): JSX.Element => {
-  return <ReadingComponent />;
+  return (
+    <>
+      <ReadingComponent />
+    </>
+  );
 };

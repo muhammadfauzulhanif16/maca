@@ -1,8 +1,8 @@
-import React from "react";
+import { FC } from "react";
 import { Routes, Route } from "react-router-dom";
 import { Routers } from "./Routers";
 
-export const App = () => {
+export const App: FC<{}> = (): JSX.Element => {
   return (
     <Routes>
       {Routers.map(

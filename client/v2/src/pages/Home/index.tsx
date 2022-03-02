@@ -1,6 +1,10 @@
 import { FC } from "react";
-import { HomeComponent } from "../../components/Home";
+import { HomeComponent } from "../../features";
 
 export const HomePage: FC<{}> = (): JSX.Element => {
-  return <HomeComponent />;
+  return (
+    <>
+      <HomeComponent />
+    </>
+  );
 };

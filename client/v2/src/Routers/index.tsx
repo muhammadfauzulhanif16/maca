@@ -1,8 +1,10 @@
-import { HomePage } from "../pages/Home";
-import { AddPage } from "../pages/Add";
-import { ReadingPage } from "../pages/Reading";
-import { FinishedPage } from "../pages/Finished";
-import { NotFoundPage } from "../pages/NotFound";
+import {
+  HomePage,
+  AddPage,
+  ReadingPage,
+  FinishedPage,
+  NotFoundPage,
+} from "../pages";
 
 export const Routers = [
   {
