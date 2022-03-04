@@ -21,13 +21,13 @@ export const Content: FC<ContentProps> = ({ children, titlePage }) => {
             <input
               type="submit"
               value="Submit"
-              className="pr-4 py-2 rounded-xl cursor-pointer pl-14"
+              className="font-medium pr-4 py-2 rounded-xl cursor-pointer pl-14"
             />
           </div>
         ) : (
           <button
             onClick={() => navigate("/add")}
-            className="shadow-sm py-2 bg-cyan-400 dark:bg-cyan-500 dark:hover:text-zinc-900 hover:text-zinc-50 px-4 rounded-xl flex items-center"
+            className="font-medium shadow-sm py-2 bg-cyan-400 dark:bg-cyan-500 dark:hover:text-zinc-900 hover:text-zinc-50 px-4 rounded-xl flex items-center"
           >
             <Add width={24} className="mr-4" />
             Create book

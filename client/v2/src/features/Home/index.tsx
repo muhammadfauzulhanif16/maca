@@ -27,7 +27,7 @@ export const HomeComponent: FC<{}> = (): JSX.Element => {
       <div>
         <p className="font-medium mb-3 text-xl">Overview</p>
 
-        <div className="grid grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4 lg:gap-8">
           {Page.map(({ icon, title }, id) => (
             <div
               key={id}
