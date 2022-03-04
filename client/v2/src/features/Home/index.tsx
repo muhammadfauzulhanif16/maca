@@ -23,7 +23,7 @@ export const HomeComponent: FC<{}> = (): JSX.Element => {
   ];
 
   return (
-    <Layout titlePage="Dashboard">
+    <Layout titlePage="Home">
       <div>
         <p className="font-medium mb-3 text-xl">Overview</p>
 
