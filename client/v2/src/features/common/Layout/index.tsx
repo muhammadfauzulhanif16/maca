@@ -17,10 +17,10 @@ export const Layout: FC<LayoutProps> = ({
     <div className="grid grid-cols-5 h-screen">
       <SideBar titlePage={titlePage} />
 
-      <div className="px-8 col-span-4">
+      <form className="px-8 col-span-4 font-medium">
         <Header />
-        <Content children={children} />
-      </div>
+        <Content children={children} titlePage={titlePage} />
+      </form>
     </div>
   );
 };

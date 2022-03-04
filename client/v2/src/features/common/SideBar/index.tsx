@@ -16,25 +16,28 @@ export const SideBar: FC<SideBarProps> = ({ titlePage }) => {
   const navigate = useNavigate(),
     Page = [
       {
-        icon: <Home width={24} className="text-cyan-100" />,
+        icon: <Home width={24} />,
         title: "Dashboard",
       },
-      { icon: <BookAdd width={24} className="text-cyan-100" />, title: "Add" },
+      { icon: <BookAdd width={24} />, title: "Add" },
       {
-        icon: <BookOpen width={24} className="text-cyan-100" />,
+        icon: <BookOpen width={24} />,
         title: "Reading",
       },
       {
-        icon: <Book width={24} className="text-cyan-100" />,
+        icon: <Book width={24} />,
         title: "Finished",
       },
     ];
 
   return (
-    <aside className="shadow-sm col-span-1 bg-cyan-500 top-0 bottom-0 p-4 box my-4 ml-4 rounded-xl">
-      <Link to="/" className="flex items-center mb-4 px-3">
-        <Notebook width={32} className="text-slate-900" />
-        <h1 className="font-bold text-3xl text-slate-50 ml-4">Maca</h1>
+    <aside className="shadow-sm col-span-1 bg-zinc-100 dark:bg-zinc-800 top-0 bottom-0 p-4 box my-4 ml-4 rounded-xl">
+      <Link
+        to="/"
+        className="text-cyan-400 dark:text-cyan-500 flex items-center mb-4 px-3"
+      >
+        <Notebook width={32} />
+        <h1 className="font-bold text-3xl ml-4">Maca</h1>
       </Link>
 
       <div>
@@ -43,9 +46,9 @@ export const SideBar: FC<SideBarProps> = ({ titlePage }) => {
             key={id}
             className={`${
               titlePage === title
-                ? "shadow-sm hover:bg-cyan-900 bg-cyan-900 "
-                : "hover:shadow-sm hover:bg-cyan-700"
-            } text-cyan-50 w-full flex px-4 py-2 rounded-lg mb-4 font-medium transition-all ease-in-out`}
+                ? "shadow-sm bg-cyan-400 dark:bg-cyan-500 hover:bg-cyan-400 dark:hover:bg-cyan-500"
+                : "hover:shadow-sm hover:bg-cyan-400 dark:hover:bg-cyan-500 dark:hover:text-zinc-900 hover:text-zinc-50"
+            } w-full flex px-4 py-2 rounded-xl mb-4 font-medium transition-all ease-in-out`}
             onClick={() =>
               navigate(title !== "Dashboard" ? `/${title?.toLowerCase()}` : "/")
             }
