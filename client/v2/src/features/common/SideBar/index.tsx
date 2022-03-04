@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import {
   Notebook,
@@ -6,7 +6,6 @@ import {
   BookAdd,
   BookOpen,
   Home,
-  KeyboardTab,
 } from "@emotion-icons/fluentui-system-regular";
 
 interface SideBarProps {
