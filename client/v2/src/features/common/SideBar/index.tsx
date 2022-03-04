@@ -101,7 +101,7 @@ export const SideBar: FC<SideBarProps> = ({ titlePage }) => {
                 : "hover:shadow-sm hover:bg-cyan-400 dark:hover:bg-cyan-500 dark:hover:text-zinc-900 hover:text-zinc-50"
             } w-full px-2 py-2 rounded-xl font-medium transition-all ease-in-out`}
             onClick={() =>
-              navigate(title !== "Dashboard" ? `/${title?.toLowerCase()}` : "/")
+              navigate(title !== "Home" ? `/${title?.toLowerCase()}` : "/")
             }
           >
             {icon}
