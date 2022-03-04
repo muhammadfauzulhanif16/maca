@@ -11,5 +11,5 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-slate-900 rounded-full;
+  @apply bg-zinc-100 dark:bg-zinc-800 rounded-full;
 }
