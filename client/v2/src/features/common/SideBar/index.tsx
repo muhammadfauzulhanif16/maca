@@ -57,23 +57,25 @@ export const SideBar: FC<SideBarProps> = ({ titlePage }) => {
         </div>
 
         <div>
-          {Page.map(({ icon, title }, id) => (
-            <button
-              key={id}
-              className={`${
-                titlePage === title
-                  ? "shadow-sm bg-cyan-400 dark:bg-cyan-500 hover:bg-cyan-400 dark:hover:bg-cyan-500"
-                  : "hover:shadow-sm hover:bg-cyan-400 dark:hover:bg-cyan-500 dark:hover:text-zinc-900 hover:text-zinc-50"
-              } w-full flex px-4 py-2 rounded-xl mb-4 font-medium transition-all ease-in-out`}
-              onClick={() =>
-                navigate(title !== "Home" ? `/${title?.toLowerCase()}` : "/")
-              }
-            >
-              {icon}
+          {Page.map(
+            ({ icon, title }, id): JSX.Element => (
+              <button
+                key={id}
+                className={`${
+                  titlePage === title
+                    ? "shadow-sm bg-cyan-400 dark:bg-cyan-500 hover:bg-cyan-400 dark:hover:bg-cyan-500"
+                    : "hover:shadow-sm hover:bg-cyan-400 dark:hover:bg-cyan-500 dark:hover:text-zinc-900 hover:text-zinc-50"
+                } w-full flex px-4 py-2 rounded-xl mb-4 font-medium transition-all ease-in-out`}
+                onClick={() =>
+                  navigate(title !== "Home" ? `/${title?.toLowerCase()}` : "/")
+                }
+              >
+                {icon}
 
-              <p className="ml-4 ">{title}</p>
-            </button>
-          ))}
+                <p className="ml-4 ">{title}</p>
+              </button>
+            )
+          )}
         </div>
 
         {/* {isShowText ? null : (
