@@ -17,7 +17,7 @@ export const SideBar: FC<SideBarProps> = ({ titlePage }) => {
     Page = [
       {
         icon: <Home width={24} />,
-        title: "Dashboard",
+        title: "Home",
       },
       {
         icon: <BookAdd width={24} />,
