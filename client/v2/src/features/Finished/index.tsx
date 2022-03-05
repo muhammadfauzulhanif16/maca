@@ -52,7 +52,7 @@ export const FinishedComponent: FC<{}> = (): JSX.Element => {
                 <td className="px-6 py-4 text-sm">{year}</td>
                 <td className="px-6 py-4 text-sm flex justify-center dark:text-zinc-50 text-zinc-900">
                   <button
-                    className="p-2 mx-2 bg-blue-400 dark:bg-blue-500 flex rounded-xl"
+                    className="p-2 mx-2 bg-blue-400 dark:bg-blue-500 hover:bg-blue-500 dark:hover:bg-blue-400 flex rounded-xl"
                     onClick={() => {
                       handleIsCompleted(id)
                       setTimeout(() => navigate("/reading"), 3000)
@@ -61,7 +61,7 @@ export const FinishedComponent: FC<{}> = (): JSX.Element => {
                   </button>
 
                   <button
-                    className="p-2 mx-2 bg-rose-400 dark:bg-rose-500 flex rounded-xl"
+                    className="p-2 mx-2 bg-rose-400 dark:bg-rose-500 hover:bg-rose-500 dark:hover:bg-rose-400 flex rounded-xl"
                     onClick={() => {
                       handleDelete(id)
                       setInterval(() => window.location.reload(), 3000)
