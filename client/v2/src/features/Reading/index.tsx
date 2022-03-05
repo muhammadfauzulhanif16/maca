@@ -22,8 +22,9 @@ export const ReadingComponent: FC<{}> = (): JSX.Element => {
       <table className="w-full divide-y divide-zinc-100 dark:divide-zinc-800">
         <thead className="w-full">
           <tr>
-            {Field.map((title) => (
+            {Field.map((title, id) => (
               <th
+                key={id}
                 className="px-6 py-4 text-left text-xs font-medium text-zinc-500 uppercase "
               >
                 {title}

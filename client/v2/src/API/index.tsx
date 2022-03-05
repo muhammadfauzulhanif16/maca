@@ -1,5 +1,5 @@
 import axios from "axios";
 
 export const API = axios.create({
-  baseURL: "http://localhost:8080/v1",
+  baseURL: "https://maca-bookshelf-server.herokuapp.com/v1",
 });
