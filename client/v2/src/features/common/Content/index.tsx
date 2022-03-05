@@ -16,7 +16,7 @@ export const Content: FC<ContentProps> = ({ children, titlePage }) => {
       <div className="py-6">
         <div className="mb-6 flex justify-between">
           <p className="text-3xl">
-            {titlePage}
+            {titlePage === "Home" ? "Dashboard" : titlePage}
           </p>
 
           <button
