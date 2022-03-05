@@ -24,9 +24,12 @@ export const AddComponent = () => {
           }}
           onSubmit={(values, { resetForm }): void => {
             dispatch(createBookAct(values));
-            alert(JSON.stringify(values, null, 2));
+            // alert(JSON.stringify(values, null, 2));
             resetForm();
-            navigate(values.is_completed === false ? "/reading" : "/finished")
+
+            // setTimeout(() => {
+            //   navigate(values.is_completed === false ? "/reading" : "/finished")
+            // }, 3000)
           }}
         >
           <Form>
