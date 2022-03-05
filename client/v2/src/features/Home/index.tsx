@@ -6,7 +6,6 @@ import {
   BookOpen,
 } from "@emotion-icons/fluentui-system-regular";
 import { useDispatch, useSelector } from "react-redux";
-import { bookReducer } from "../../store/reducers/book";
 import { RootState } from "../../store";
 import { readAllBooksAct } from "../../store/actions/book";
 
@@ -36,7 +35,6 @@ export const HomeComponent: FC<{}> = (): JSX.Element => {
         data: finished.length
       },
     ];
-
 
   useEffect(() => {
     dispatch(readAllBooksAct())

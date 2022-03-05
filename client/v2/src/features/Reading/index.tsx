@@ -9,7 +9,7 @@ export const ReadingComponent: FC<{}> = (): JSX.Element => {
     books = useSelector(({ book }: RootState) => book.books),
     reading = books.filter(({ is_completed }: any) => {
       return is_completed === false;
-    }), Field = ["Title", "Author", "Year", "Action"]
+    }), Field = ["#", "Title", "Author", "Year", "Action"]
 
   useEffect(() => {
     dispatch(readAllBooksAct())
@@ -33,8 +33,9 @@ export const ReadingComponent: FC<{}> = (): JSX.Element => {
         </thead>
 
         <tbody className="divide-y text-zinc-900 dark:text-zinc-50 divide-zinc-100 dark:divide-zinc-800 w-full overflow-scroll">
-          {reading.map(({ id, title, author, year }: any) => (
+          {reading.map(({ title, author, year }: any, id: number) => (
             <tr key={id}>
+              <td className="px-6 py-4 whitespace-nowrap text-sm">{id + 1}</td>
               <td className="px-6 py-4 whitespace-nowrap text-sm">{title}</td>
               <td className="px-6 py-4 whitespace-nowrap text-sm">{author}</td>
               <td className="px-6 py-4 whitespace-nowrap text-sm">{year}</td>
