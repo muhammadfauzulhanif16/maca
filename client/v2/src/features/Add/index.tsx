@@ -4,9 +4,11 @@ import { Formik } from "formik";
 import { ArrowEnterLeft } from "@emotion-icons/fluentui-system-regular";
 import { useDispatch } from "react-redux";
 import { createBookAct } from "../../store/actions/book";
+import { useNavigate } from "react-router-dom";
 
 export const AddComponent = () => {
   const dispatch = useDispatch(),
+    navigate = useNavigate(),
     Inputs = ["Title", "Author", "Year"];
 
   return (
@@ -24,6 +26,7 @@ export const AddComponent = () => {
             dispatch(createBookAct(values));
             alert(JSON.stringify(values, null, 2));
             resetForm();
+            navigate(values.is_completed === false ? "/reading" : "/finished")
           }}
         >
           <Form>
