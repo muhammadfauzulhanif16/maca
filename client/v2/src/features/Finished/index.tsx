@@ -46,10 +46,10 @@ export const FinishedComponent: FC<{}> = (): JSX.Element => {
           <tbody className="divide-y text-zinc-900 dark:text-zinc-50 divide-zinc-100 dark:divide-zinc-800">
             {finished.map(({ id, title, author, year }: any, BookId: number) => (
               <tr key={id}>
-                <td className="px-6 py-4 text-sm text-center">{BookId + 1}</td>
+                <td className="px-6 py-4 text-sm">{BookId + 1}</td>
                 <td className="px-6 py-4 text-sm">{title}</td>
-                <td className="px-6 py-4 text-sm text-center">{author}</td>
-                <td className="px-6 py-4 text-sm text-center">{year}</td>
+                <td className="px-6 py-4 text-sm">{author}</td>
+                <td className="px-6 py-4 text-sm">{year}</td>
                 <td className="px-6 py-4 text-sm flex justify-center dark:text-zinc-50 text-zinc-900">
                   <button
                     className="p-2 mx-2 bg-blue-400 dark:bg-blue-500 flex rounded-xl"

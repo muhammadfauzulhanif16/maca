@@ -64,7 +64,7 @@ export const SideBar: FC<SideBarProps> = ({ titlePage }) => {
                 className={`${titlePage === title
                   ? "shadow-sm bg-cyan-400 dark:bg-cyan-500 hover:bg-cyan-400 dark:hover:bg-cyan-500"
                   : "hover:shadow-sm hover:bg-cyan-400 dark:hover:bg-cyan-500 dark:hover:text-zinc-900 hover:text-zinc-50"
-                  } w-full flex px-4 py-2 rounded-xl mb-4 font-medium transition-all ease-in-out`}
+                  } w-full flex px-4 py-2 rounded-xl mb-2 font-medium transition-all ease-in-out`}
                 onClick={() =>
                   navigate(title === "Home" ? "/" : `/${title?.toLowerCase()}`)
                 }
