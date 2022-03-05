@@ -50,6 +50,7 @@ export const AddComponent = () => {
               <label key={id} htmlFor="title" className="flex flex-col">
                 {title}
                 <Field
+                  required
                   id={title.toLowerCase()}
                   name={title.toLowerCase()}
                   type="text"

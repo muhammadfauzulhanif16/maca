@@ -89,7 +89,7 @@ export const SideBar: FC<SideBarProps> = ({ titlePage }) => {
       )} */}
       </aside>
 
-      <nav className="bg-zinc-100 dark:bg-zinc-800 lg:hidden grid grid-cols-4 gap-2 fixed bottom-0 bg-red-900 p-4 my-4 mx-4 sm:mx-8 right-0 left-0 rounded-xl">
+      <nav className="bg-zinc-100 dark:bg-zinc-800 lg:hidden grid grid-cols-4 gap-2 fixed bottom-0 bg-red-900 p-2 my-4 mx-4 sm:mx-8 right-0 left-0 rounded-xl">
         {Page.map(({ icon, title }, id) => (
           <button
             title={title}
