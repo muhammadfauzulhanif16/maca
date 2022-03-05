@@ -1,41 +1,60 @@
-import { FC } from "react";
+import { Field, Form } from "formik";
 import { Layout } from "../common/Layout";
-import { Form, Field } from "formik";
+import { Formik } from "formik";
+import { ArrowEnterLeft } from "@emotion-icons/fluentui-system-regular";
+import { useDispatch } from "react-redux";
+import { createBookAct } from "../../store/actions/book";
 
-export const AddComponent: FC<{}> = (): JSX.Element => {
+export const AddComponent = () => {
+  const dispatch = useDispatch(),
+    Inputs = ["Title", "Author", "Year"];
+
   return (
     <Layout titlePage="Add">
-      <Form>
-        <label htmlFor="title" className="flex flex-col">
-          Title
-          <Field
-            id="title"
-            name="title"
-            type="text"
-            className="mt-4 form-input bg-zinc-100 dark:bg-zinc-800 rounded-xl focus:ring-0 border-0"
-          />
-        </label>
+      <div className="py-6">
 
-        <label htmlFor="title" className="flex flex-col">
-          Title
-          <Field
-            id="title"
-            name="title"
-            type="text"
-            className="mt-4 form-input bg-zinc-100 dark:bg-zinc-800 rounded-xl focus:ring-0 border-0"
-          />
-        </label>
+        <Formik
+          initialValues={{
+            title: "",
+            author: "",
+            year: "",
+            is_completed: false,
+          }}
+          onSubmit={(values, { resetForm }): void => {
+            dispatch(createBookAct(values));
+            alert(JSON.stringify(values, null, 2));
+            resetForm();
+          }}
+        >
+          <Form>
+            <div className="mb-6 flex justify-between">
+              <p className="text-3xl">
+                Add
+              </p>
 
-        <label htmlFor="title" className="flex flex-col">
-          Title
-          <Field
-            id="title"
-            name="title"
-            type="text"
-            className="mt-4 form-input bg-zinc-100 dark:bg-zinc-800 rounded-xl focus:ring-0 border-0"
-          />
-        </label>
-      </Form>
+              <button
+                type="submit"
+                className="font-medium shadow-sm py-2 bg-cyan-400 dark:bg-cyan-500 dark:hover:text-zinc-900 hover:text-zinc-50 px-4 rounded-xl flex items-center"
+              >
+                <ArrowEnterLeft width={24} className="mr-4" />
+                Submit
+              </button>
+            </div>
+
+            {Inputs.map((title, id) => (
+              <label key={id} htmlFor="title" className="flex flex-col">
+                {title}
+                <Field
+                  id={title.toLowerCase()}
+                  name={title.toLowerCase()}
+                  type="text"
+                  className="mt-4 form-input bg-zinc-100 dark:bg-zinc-800 rounded-xl focus:ring-0 border-0"
+                />
+              </label>
+            ))}
+          </Form>
+        </Formik>
+      </div >
     </Layout>
   );
 };

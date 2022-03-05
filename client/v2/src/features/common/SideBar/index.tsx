@@ -61,13 +61,12 @@ export const SideBar: FC<SideBarProps> = ({ titlePage }) => {
             ({ icon, title }, id): JSX.Element => (
               <button
                 key={id}
-                className={`${
-                  titlePage === title
-                    ? "shadow-sm bg-cyan-400 dark:bg-cyan-500 hover:bg-cyan-400 dark:hover:bg-cyan-500"
-                    : "hover:shadow-sm hover:bg-cyan-400 dark:hover:bg-cyan-500 dark:hover:text-zinc-900 hover:text-zinc-50"
-                } w-full flex px-4 py-2 rounded-xl mb-4 font-medium transition-all ease-in-out`}
+                className={`${titlePage === title
+                  ? "shadow-sm bg-cyan-400 dark:bg-cyan-500 hover:bg-cyan-400 dark:hover:bg-cyan-500"
+                  : "hover:shadow-sm hover:bg-cyan-400 dark:hover:bg-cyan-500 dark:hover:text-zinc-900 hover:text-zinc-50"
+                  } w-full flex px-4 py-2 rounded-xl mb-4 font-medium transition-all ease-in-out`}
                 onClick={() =>
-                  navigate(title !== "Home" ? `/${title?.toLowerCase()}` : "/")
+                  navigate(title === "Home" ? "/" : `/${title?.toLowerCase()}`)
                 }
               >
                 {icon}
@@ -90,18 +89,17 @@ export const SideBar: FC<SideBarProps> = ({ titlePage }) => {
       )} */}
       </aside>
 
-      <div className="bg-zinc-100 dark:bg-zinc-800 lg:hidden grid grid-cols-4 gap-4 fixed bottom-0 bg-red-900 p-4 my-4 mx-4 sm:mx-8 right-0 left-0 rounded-xl">
+      <div className="bg-zinc-100 dark:bg-zinc-800 lg:hidden grid grid-cols-4 gap-2 fixed bottom-0 bg-red-900 p-4 my-4 mx-4 sm:mx-8 right-0 left-0 rounded-xl">
         {Page.map(({ icon, title }, id) => (
           <button
             title={title}
             key={id}
-            className={`${
-              titlePage === title
-                ? "shadow-sm bg-cyan-400 dark:bg-cyan-500 hover:bg-cyan-400 dark:hover:bg-cyan-500"
-                : "hover:shadow-sm hover:bg-cyan-400 dark:hover:bg-cyan-500 dark:hover:text-zinc-900 hover:text-zinc-50"
-            } w-full px-2 py-2 rounded-xl font-medium transition-all ease-in-out`}
+            className={`${titlePage === title
+              ? "shadow-sm bg-cyan-400 dark:bg-cyan-500 hover:bg-cyan-400 dark:hover:bg-cyan-500"
+              : "hover:shadow-sm hover:bg-cyan-400 dark:hover:bg-cyan-500 dark:hover:text-zinc-900 hover:text-zinc-50"
+              } w-full px-2 py-2 rounded-xl font-medium transition-all ease-in-out`}
             onClick={() =>
-              navigate(title !== "Home" ? `/${title?.toLowerCase()}` : "/")
+              navigate(title === "Home" ? "/" : `/${title?.toLowerCase()}`)
             }
           >
             {icon}
