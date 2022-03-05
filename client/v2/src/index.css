@@ -13,3 +13,7 @@ html {
 ::-webkit-scrollbar-thumb {
   @apply bg-zinc-100 dark:bg-zinc-800 rounded-full;
 }
+
+tbody {
+  overflow-y: auto;
+}

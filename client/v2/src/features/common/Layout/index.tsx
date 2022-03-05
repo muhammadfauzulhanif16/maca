@@ -15,7 +15,7 @@ export const Layout: FC<LayoutProps> = ({
   children,
 }): JSX.Element => {
   return (
-    <div className="flex h-screen fixed w-screen">
+    <div className="flex h-screen w-screen">
       <SideBar titlePage={titlePage} />
 
       <div className="px-4 sm:px-8 w-full h-screen h-screen">

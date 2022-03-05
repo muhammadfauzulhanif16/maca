@@ -34,13 +34,13 @@ export const ReadingComponent: FC<{}> = (): JSX.Element => {
             </tr>
           </thead>
 
-          <tbody className="divide-y text-zinc-900 dark:text-zinc-50 divide-zinc-100 dark:divide-zinc-800 w-full overflow-y-auto">
+          <tbody className="divide-y text-zinc-900 dark:text-zinc-50 divide-zinc-100 dark:divide-zinc-800 w-full">
             {reading.map(({ title, author, year }: any, id: number) => (
               <tr key={id}>
-                <td className="px-6 py-4 whitespace-nowrap text-sm">{id + 1}</td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm">{title}</td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm">{author}</td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm">{year}</td>
+                <td className="px-6 py-4 text-sm">{id + 1}</td>
+                <td className="px-6 py-4 text-sm">{title}</td>
+                <td className="px-6 py-4 text-sm">{author}</td>
+                <td className="px-6 py-4 text-sm">{year}</td>
               </tr>
             ))}
           </tbody>
