@@ -19,9 +19,9 @@ export const ReadingComponent: FC<{}> = (): JSX.Element => {
 
   return (
     <Layout titlePage="Reading">
-      <div className="overflow-x-auto">
+      <div className="overflow-auto h-96">
         <table className="w-full divide-y divide-zinc-100 dark:divide-zinc-800">
-          <thead className="w-full">
+          <thead className="sticky top-0 bg-zinc-50 dark:bg-zinc-900">
             <tr>
               {Field.map((title, id) => (
                 <th
@@ -34,7 +34,7 @@ export const ReadingComponent: FC<{}> = (): JSX.Element => {
             </tr>
           </thead>
 
-          <tbody className="divide-y text-zinc-900 dark:text-zinc-50 divide-zinc-100 dark:divide-zinc-800 w-full">
+          <tbody className="divide-y text-zinc-900 dark:text-zinc-50 divide-zinc-100 dark:divide-zinc-800">
             {reading.map(({ title, author, year }: any, id: number) => (
               <tr key={id}>
                 <td className="px-6 py-4 text-sm">{id + 1}</td>
