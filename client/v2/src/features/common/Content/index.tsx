@@ -1,5 +1,5 @@
 import { FC, ReactNode } from "react";
-import { Add, ArrowEnterLeft } from "@emotion-icons/fluentui-system-regular";
+import { Add } from "@emotion-icons/fluentui-system-regular";
 import { useNavigate } from "react-router-dom";
 
 interface ContentProps {
