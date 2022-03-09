@@ -2,9 +2,6 @@ import { FC, ReactNode } from "react";
 import { Add } from "@emotion-icons/fluentui-system-regular";
 import { useNavigate } from "react-router-dom";
 import { IconButton } from "../IconButton";
-import { Form, Formik } from "formik";
-import { useDispatch } from "react-redux";
-import { createBookAct } from "../../../store/actions/book";
 
 interface ContentProps {
   children?: ReactNode;
