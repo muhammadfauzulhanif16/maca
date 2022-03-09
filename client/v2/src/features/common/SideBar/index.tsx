@@ -1,50 +1,27 @@
 import { FC } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import {
-  Notebook,
-  Book,
-  BookAdd,
-  BookOpen,
-  Home,
-} from "@emotion-icons/fluentui-system-regular";
+import { useNavigate } from "react-router-dom";
+import { Notebook } from "@emotion-icons/fluentui-system-regular";
+import { IconButton } from "../IconButton";
+import { PageNavs, PageNavsState } from "./PageNavs";
 
 interface SideBarProps {
   titlePage?: string;
 }
 
 export const SideBar: FC<SideBarProps> = ({ titlePage }) => {
-  const navigate = useNavigate(),
-    Page = [
-      {
-        icon: <Home width={24} />,
-        title: "Home",
-      },
-      {
-        icon: <BookAdd width={24} />,
-        title: "Add",
-      },
-      {
-        icon: <BookOpen width={24} />,
-        title: "Reading",
-      },
-      {
-        icon: <Book width={24} />,
-        title: "Finished",
-      },
-    ];
+  const navigate = useNavigate();
 
   return (
     <>
-      <aside className="w-1/4 hidden lg:flex flex-col shadow-sm bg-zinc-100 dark:bg-zinc-800 top-0 bottom-0 p-4 box my-4 ml-4 rounded-xl">
+      <aside className="w-1/4 hidden lg:flex flex-col shadow-xl bg-zinc-100 dark:bg-zinc-800 top-0 bottom-0 p-4 box my-8 ml-8 rounded-xl">
         <div className="flex mb-4 items-center justify-between">
-          <Link
-            to="/"
-            className="text-cyan-400 dark:text-cyan-500 flex items-center px-3"
-          >
-            <Notebook width={32} />
-
-            <h1 className="font-bold text-2xl ml-4">Maca</h1>
-          </Link>
+          <IconButton
+            className="cursor-pointer px-3 text-cyan-400 dark:text-cyan-500 flex items-center font-bold text-2xl"
+            icon={<Notebook width={32} />}
+            onClick={() => navigate("/")}
+            text="Maca"
+            textClass="ml-4"
+          />
 
           {/* {isShowText ? (
           <button
@@ -57,22 +34,22 @@ export const SideBar: FC<SideBarProps> = ({ titlePage }) => {
         </div>
 
         <div>
-          {Page.map(
-            ({ icon, title }, id): JSX.Element => (
-              <button
+          {PageNavs.map(
+            ({ icon, text }: PageNavsState, id: number): JSX.Element => (
+              <IconButton
                 key={id}
-                className={`${titlePage === title
-                  ? "shadow-sm bg-cyan-400 dark:bg-cyan-500 hover:bg-cyan-400 dark:hover:bg-cyan-500"
-                  : "hover:shadow-sm hover:bg-cyan-400 dark:hover:bg-cyan-500 dark:hover:text-zinc-900 hover:text-zinc-50"
-                  } w-full flex px-4 py-2 rounded-xl mb-2 font-medium transition-all ease-in-out`}
+                className={`${
+                  titlePage === text
+                    ? "shadow-xl bg-cyan-400 dark:bg-cyan-500 hover:bg-cyan-400 dark:hover:bg-cyan-500"
+                    : "hover:shadow-xl hover:bg-cyan-500 dark:hover:bg-cyan-400 hover:text-zinc-50 dark:hover:text-zinc-900"
+                } w-full flex px-4 py-2 rounded-xl mb-2 font-medium transition-all ease-in-out cursor-pointer`}
+                icon={icon}
                 onClick={() =>
-                  navigate(title === "Home" ? "/" : `/${title?.toLowerCase()}`)
+                  navigate(text === "Home" ? "/" : `/${text?.toLowerCase()}`)
                 }
-              >
-                {icon}
-
-                <p className="ml-4 ">{title}</p>
-              </button>
+                text={text}
+                textClass="ml-4"
+              />
             )
           )}
         </div>
@@ -89,25 +66,23 @@ export const SideBar: FC<SideBarProps> = ({ titlePage }) => {
       )} */}
       </aside>
 
-      <nav className="bg-zinc-100 dark:bg-zinc-800 lg:hidden grid grid-cols-4 gap-2 fixed bottom-0 p-2 my-4 mx-4 sm:mx-8 right-0 left-0 rounded-xl">
-        {Page.map(({ icon, title }, id) => (
-          <button
-            title={title}
+      <div className="bg-zinc-100 dark:bg-zinc-800 lg:hidden grid grid-cols-4 gap-2 fixed bottom-0 p-2 my-4 mx-4 sm:mx-8 right-0 left-0 rounded-xl">
+        {PageNavs.map(({ icon, text }: PageNavsState, id: number) => (
+          <IconButton
             key={id}
-            className={`${titlePage === title
-              ? "shadow-sm bg-cyan-400 dark:bg-cyan-500 hover:bg-cyan-400 dark:hover:bg-cyan-500"
-              : "hover:shadow-sm hover:bg-cyan-400 dark:hover:bg-cyan-500 dark:hover:text-zinc-900 hover:text-zinc-50"
-              } w-full p-2 rounded-xl font-medium transition-all ease-in-out`}
+            icon={icon}
+            className={`${
+              titlePage === text
+                ? "shadow-xl bg-cyan-400 dark:bg-cyan-500 hover:bg-cyan-400 dark:hover:bg-cyan-500"
+                : "hover:shadow-xl hover:bg-cyan-500 dark:hover:bg-cyan-400"
+            } w-full p-2 rounded-xl text-sm transition-all ease-in-out cursor-pointer flex flex-col items-center`}
             onClick={() =>
-              navigate(title === "Home" ? "/" : `/${title?.toLowerCase()}`)
+              navigate(text === "Home" ? "/" : `/${text?.toLowerCase()}`)
             }
-          >
-            {icon}
-
-            <p className="text-sm">{title}</p>
-          </button>
+            text={text}
+          />
         ))}
-      </nav>
+      </div>
     </>
   );
 };

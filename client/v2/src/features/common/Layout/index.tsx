@@ -21,6 +21,6 @@ export const Layout: FC<LayoutProps> = ({
 
         <Content children={children} titlePage={titlePage} />
       </div>
-    </div >
+    </div>
   );
 };

@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../store";
 import { readAllBooksAct } from "../../store/actions/book";
 import { Layout } from "../common/Layout";
-import { Book, Delete } from "@emotion-icons/fluentui-system-regular"
+import { Book, Delete } from "@emotion-icons/fluentui-system-regular";
 import { updateIsCompletedAct } from "../../store/actions/book";
 import { deleteBookAct } from "../../store/actions/book";
 import { useNavigate } from "react-router-dom";
@@ -14,7 +14,8 @@ export const FinishedComponent: FC<{}> = (): JSX.Element => {
     books = useSelector(({ book }: RootState) => book.books),
     finished = books.filter(({ is_completed }: any) => {
       return is_completed === true;
-    }), Field = ["#", "Title", "Author", "Year", "Action"],
+    }),
+    Field = ["#", "Title", "Author", "Year", "Action"],
     handleIsCompleted = (BookId: number): void => {
       dispatch(updateIsCompletedAct(BookId));
     },
@@ -23,8 +24,8 @@ export const FinishedComponent: FC<{}> = (): JSX.Element => {
     };
 
   useEffect(() => {
-    dispatch(readAllBooksAct())
-  }, [dispatch])
+    dispatch(readAllBooksAct());
+  }, [dispatch]);
 
   return (
     <Layout titlePage="Finished">
@@ -44,33 +45,37 @@ export const FinishedComponent: FC<{}> = (): JSX.Element => {
           </thead>
 
           <tbody className="divide-y text-zinc-900 dark:text-zinc-50 divide-zinc-100 dark:divide-zinc-800">
-            {finished.map(({ id, title, author, year }: any, BookId: number) => (
-              <tr key={id}>
-                <td className="px-6 py-4 text-sm">{BookId + 1}</td>
-                <td className="px-6 py-4 text-sm">{title}</td>
-                <td className="px-6 py-4 text-sm">{author}</td>
-                <td className="px-6 py-4 text-sm">{year}</td>
-                <td className="px-6 py-4 text-sm flex justify-center dark:text-zinc-50 text-zinc-900">
-                  <button
-                    className="p-2 mx-2 bg-blue-400 dark:bg-blue-500 hover:bg-blue-500 dark:hover:bg-blue-400 flex rounded-xl"
-                    onClick={() => {
-                      handleIsCompleted(id)
-                      setTimeout(() => navigate("/reading"), 3000)
-                    }}>
-                    <Book width={16} />
-                  </button>
+            {finished.map(
+              ({ id, title, author, year }: any, BookId: number) => (
+                <tr key={id}>
+                  <td className="px-6 py-4 text-sm">{BookId + 1}</td>
+                  <td className="px-6 py-4 text-sm">{title}</td>
+                  <td className="px-6 py-4 text-sm">{author}</td>
+                  <td className="px-6 py-4 text-sm">{year}</td>
+                  <td className="px-6 py-4 text-sm flex justify-center dark:text-zinc-50 text-zinc-900">
+                    <button
+                      className="p-2 mx-2 bg-blue-400 dark:bg-blue-500 hover:bg-blue-500 dark:hover:bg-blue-400 flex rounded-xl"
+                      onClick={() => {
+                        handleIsCompleted(id);
+                        setTimeout(() => navigate("/reading"), 3000);
+                      }}
+                    >
+                      <Book width={16} />
+                    </button>
 
-                  <button
-                    className="p-2 mx-2 bg-rose-400 dark:bg-rose-500 hover:bg-rose-500 dark:hover:bg-rose-400 flex rounded-xl"
-                    onClick={() => {
-                      handleDelete(id)
-                      setInterval(() => window.location.reload(), 3000)
-                    }}>
-                    <Delete width={16} />
-                  </button>
-                </td>
-              </tr>
-            ))}
+                    <button
+                      className="p-2 mx-2 bg-rose-400 dark:bg-rose-500 hover:bg-rose-500 dark:hover:bg-rose-400 flex rounded-xl"
+                      onClick={() => {
+                        handleDelete(id);
+                        setInterval(() => window.location.reload(), 3000);
+                      }}
+                    >
+                      <Delete width={16} />
+                    </button>
+                  </td>
+                </tr>
+              )
+            )}
           </tbody>
         </table>
       </div>
