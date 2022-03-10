@@ -1,5 +1,4 @@
 import { FC } from "react";
-import { SpinnerIos } from "@emotion-icons/fluentui-system-regular";
 
 interface IconButtonProps {
   onClick?: () => void;

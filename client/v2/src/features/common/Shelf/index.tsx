@@ -3,6 +3,7 @@ import {
   Book,
   Delete,
   SpinnerIos,
+  BookOpen,
 } from "@emotion-icons/fluentui-system-regular";
 import {
   readAllBooksAct,
@@ -91,7 +92,13 @@ export const Shelf: FC<ShelfProps> = ({ books, isLoading }): JSX.Element => {
                           1000
                         );
                       }}
-                      icon={<Book width={16} />}
+                      icon={
+                        isCompleted === false ? (
+                          <Book width={16} />
+                        ) : (
+                          <BookOpen width={16} />
+                        )
+                      }
                     />
 
                     <IconButton
