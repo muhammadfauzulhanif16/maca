@@ -1,6 +1,6 @@
 import { FC, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { KeyboardTab, Notebook } from "@emotion-icons/fluentui-system-regular";
+import { Notebook } from "@emotion-icons/fluentui-system-regular";
 import { IconButton } from "../IconButton";
 import { PageNavs, PageNavsState } from "./PageNavs";
 

@@ -19,12 +19,13 @@ interface ShelfProps {
   isLoading?: boolean;
 }
 
-interface Book {
-  id: number;
-  title: string;
-  author: string;
-  year: string;
-}
+// interface Book {
+//   id: number;
+//   title: string;
+//   author: string;
+//   year: string;
+//   isCompleted: boolean;
+// }
 
 export const Shelf: FC<ShelfProps> = ({ books, isLoading }): JSX.Element => {
   const dispatch = useAppDispatch(),
