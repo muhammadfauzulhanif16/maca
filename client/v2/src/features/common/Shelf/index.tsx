@@ -27,7 +27,10 @@ interface ShelfProps {
 //   isCompleted: boolean;
 // }
 
-export const Shelf: FC<ShelfProps> = ({ books, isLoading }): JSX.Element => {
+export const Shelf: FC<ShelfProps> = ({
+  books,
+  isLoading,
+}: ShelfProps): JSX.Element => {
   const dispatch = useAppDispatch(),
     navigate = useNavigate(),
     TableFields: string[] = ["#", "Title", "Author", "Year", "Action"],
@@ -59,7 +62,7 @@ export const Shelf: FC<ShelfProps> = ({ books, isLoading }): JSX.Element => {
                 (title: string, id: number): JSX.Element => (
                   <th
                     key={id}
-                    className="py-4 text-center text-left text-xs font-medium text-zinc-500 uppercase "
+                    className="py-4 text-center text-left text-xs font-medium text-zinc-500 uppercase"
                   >
                     {title}
                   </th>

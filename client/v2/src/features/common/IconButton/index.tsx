@@ -8,7 +8,7 @@ interface IconButtonProps {
   type?: string;
   icon?: any;
   placeholder?: string;
-  isLoading?: boolean;
+  isSubmitting?: boolean;
 }
 
 export const IconButton: FC<IconButtonProps> = ({
@@ -17,7 +17,7 @@ export const IconButton: FC<IconButtonProps> = ({
   textClass,
   type,
   placeholder,
-  isLoading,
+  isSubmitting,
   ...props
 }): JSX.Element => {
   return (
@@ -26,7 +26,7 @@ export const IconButton: FC<IconButtonProps> = ({
         <button
           type={type === "submit" ? "submit" : "button"}
           {...props}
-          disabled={isLoading ? true : false}
+          disabled={isSubmitting}
         >
           {icon}
           <p className={textClass}>{text}</p>

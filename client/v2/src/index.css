@@ -14,6 +14,12 @@ html {
   @apply bg-zinc-100 dark:bg-zinc-800 rounded-full;
 }
 
-/* tbody {
-  overflow-y: auto;
-} */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
