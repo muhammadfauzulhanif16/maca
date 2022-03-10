@@ -5,7 +5,7 @@ import { IconButton } from "../IconButton";
 export const Header: FC<{}> = (): JSX.Element => {
   return (
     <header>
-      <div className="pb-4 pt-4 lg:pt-8 border-b-2 border-zinc-100 border-zinc-800 flex justify-end">
+      <div className="py-4 lg:py-8 border-b-2 border-zinc-100 border-zinc-800 flex justify-end">
         {/* <label
           className="mr-4 transition-all ease-in-out hover:shadow-sm group flex items-center cursor-pointer rounded-xl hover:bg-zinc-100 dark:hover:bg-zinc-800 px-4 py-2"
           htmlFor="search"

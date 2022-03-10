@@ -26,7 +26,7 @@ export const Content: FC<ContentProps> = ({
             </p>
 
             <IconButton
-              className="cursor-pointer font-medium shadow-xl py-2 bg-cyan-400 dark:bg-cyan-500 hover:bg-cyan-500 hover:bg-cyan-400 dark:hover:text-zinc-900 hover:text-zinc-50 px-4 rounded-xl flex items-center"
+              className="transition-all ease-in-out cursor-pointer font-medium shadow-xl py-2 bg-cyan-400 dark:bg-cyan-500 hover:bg-cyan-500 hover:bg-cyan-400 dark:hover:text-zinc-900 hover:text-zinc-50 px-4 rounded-xl flex items-center"
               onClick={() => navigate("/add")}
               icon={<Add width={24} />}
               text="Create book"

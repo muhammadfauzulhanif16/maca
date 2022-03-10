@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { SpinnerIos } from "@emotion-icons/fluentui-system-regular";
 
 interface IconButtonProps {
   onClick?: () => void;
@@ -8,6 +9,7 @@ interface IconButtonProps {
   type?: string;
   icon?: any;
   placeholder?: string;
+  isLoading?: boolean;
 }
 
 export const IconButton: FC<IconButtonProps> = ({
@@ -16,20 +18,25 @@ export const IconButton: FC<IconButtonProps> = ({
   textClass,
   type,
   placeholder,
+  isLoading,
   ...props
 }): JSX.Element => {
   return (
     <>
-      {type !== "submit" ? (
-        <nav {...props}>
-          {icon}
-          <p className={textClass}>{text}</p>
-        </nav>
-      ) : (
-        <button type="submit" {...props}>
+      {type === "submit" && "button" ? (
+        <button
+          type={type === "submit" ? "submit" : "button"}
+          {...props}
+          disabled={isLoading ? true : false}
+        >
           {icon}
           <p className={textClass}>{text}</p>
         </button>
+      ) : (
+        <div {...props}>
+          {icon}
+          <p className={textClass}>{text}</p>
+        </div>
       )}
     </>
   );

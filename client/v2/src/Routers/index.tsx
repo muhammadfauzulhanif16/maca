@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import {
   HomePage,
   AddPage,
@@ -6,7 +7,12 @@ import {
   NotFoundPage,
 } from "../pages";
 
-export const Routers = [
+export interface RoutersState {
+  element: ReactNode;
+  path: string;
+}
+
+export const Routers: RoutersState[] = [
   {
     element: <HomePage />,
     path: "",
