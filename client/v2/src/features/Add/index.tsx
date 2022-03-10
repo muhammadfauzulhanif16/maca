@@ -30,7 +30,9 @@ export const AddComponent: FC<{}> = (): JSX.Element => {
         validationSchema={Yup.object({
           title: Yup.string().required("Required"),
           author: Yup.string().required("Required"),
-          year: Yup.string().required("Required"),
+          year: Yup.string()
+            .required("Required")
+            .max(4, "Must be 4 characters"),
         })}
         onSubmit={(values, { resetForm, setSubmitting }): void => {
           dispatch(createBookAct(values));
@@ -88,7 +90,6 @@ export const AddComponent: FC<{}> = (): JSX.Element => {
                           </span>
                         </p>
                         <Field
-                          required
                           placeholder={`Enter book ${title.toLowerCase()}`}
                           id={title.toLowerCase()}
                           name={title.toLowerCase()}
