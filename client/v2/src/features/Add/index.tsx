@@ -43,7 +43,7 @@ export const AddComponent: FC<{}> = (): JSX.Element => {
           }, 2000);
         }}
       >
-        {({ isSubmitting, handleChange }) => {
+        {({ isSubmitting }) => {
           return (
             <Form>
               <div className="my-8 flex justify-between">
