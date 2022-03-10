@@ -88,7 +88,7 @@ export const SideBar: FC<SideBarProps> = ({ titlePage }) => {
         )} */}
       </aside>
 
-      <div className="bg-zinc-100 dark:bg-zinc-800 lg:hidden grid grid-cols-4 gap-2 fixed bottom-0 p-2 my-4 mx-4 right-0 left-0 rounded-xl">
+      <div className="shadow-xl bg-zinc-100 dark:bg-zinc-800 lg:hidden grid grid-cols-4 gap-2 fixed bottom-0 p-2 my-4 mx-4 right-0 left-0 rounded-xl">
         {PageNavs.map(({ icon, text }: PageNavsState, id: number) => (
           <IconButton
             key={id}

@@ -11,7 +11,7 @@ import { IconButton } from "../common/IconButton";
 import { RootState, useAppDispatch, useAppSelector } from "../../store";
 import { FC } from "react";
 import { InputForms } from "./InputForms";
-import * as Yup from "yup";
+import { object, string } from "yup";
 
 export const AddComponent: FC<{}> = (): JSX.Element => {
   const dispatch = useAppDispatch(),
@@ -27,12 +27,10 @@ export const AddComponent: FC<{}> = (): JSX.Element => {
           year: "",
           is_completed: false,
         }}
-        validationSchema={Yup.object({
-          title: Yup.string().required("Required"),
-          author: Yup.string().required("Required"),
-          year: Yup.string()
-            .required("Required")
-            .max(4, "Must be 4 characters"),
+        validationSchema={object({
+          title: string().required("Required"),
+          author: string().required("Required"),
+          year: string().required("Required").max(4, "Must be 4 characters"),
         })}
         onSubmit={(values, { resetForm, setSubmitting }): void => {
           dispatch(createBookAct(values));
@@ -43,7 +41,7 @@ export const AddComponent: FC<{}> = (): JSX.Element => {
           }, 2000);
         }}
       >
-        {({ isSubmitting }) => {
+        {({ isSubmitting, errors }) => {
           return (
             <Form>
               <div className="my-8 flex justify-between">
@@ -81,7 +79,7 @@ export const AddComponent: FC<{}> = (): JSX.Element => {
                       <label
                         key={id}
                         htmlFor={title.toLowerCase()}
-                        className="flex flex-col mb-8"
+                        className="flex flex-col h-28"
                       >
                         <p className="font-medium text-md">
                           {title}{" "}
@@ -89,6 +87,7 @@ export const AddComponent: FC<{}> = (): JSX.Element => {
                             *
                           </span>
                         </p>
+
                         <Field
                           placeholder={`Enter book ${title.toLowerCase()}`}
                           id={title.toLowerCase()}
