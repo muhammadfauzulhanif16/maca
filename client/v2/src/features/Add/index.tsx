@@ -99,7 +99,7 @@ export const AddComponent: FC<{}> = (): JSX.Element => {
                               ? "month"
                               : "text"
                           }
-                          className="border-0 mt-4 px-4 form-input bg-zinc-100 dark:bg-zinc-800 rounded-xl focus:ring-0"
+                          className="w-full border-0 mt-4 px-4 form-input bg-zinc-100 dark:bg-zinc-800 rounded-xl focus:ring-0"
                         />
 
                         <ErrorMessage
