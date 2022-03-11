@@ -95,7 +95,7 @@ export const AddComponent: FC<{}> = (): JSX.Element => {
                           type={
                             title.toLowerCase() === "year" ? "number" : "text"
                           }
-                          className="mt-4 form-input bg-zinc-100 dark:bg-zinc-800 rounded-xl focus:ring-0 border-0"
+                          className="mt-4 px-4 form-input bg-zinc-100 dark:bg-zinc-800 rounded-xl focus:ring-0 border-0"
                         />
 
                         <ErrorMessage
@@ -106,6 +106,19 @@ export const AddComponent: FC<{}> = (): JSX.Element => {
                       </label>
                     )
                   )}
+
+                  <label htmlFor="is_completed" className="flex items-center">
+                    <Field
+                      type="checkbox"
+                      id="is_completed"
+                      name="is_completed"
+                      className="form-checkbox rounded-md focus:ring-offset-0 focus:ring-0 focus:outline-0 border-0 focus:border-0 bg-zinc-100 dark:bg-zinc-800"
+                    />
+
+                    <p className="font-medium text-md ml-4">
+                      Have you finished reading?
+                    </p>
+                  </label>
                 </>
               )}
             </Form>
