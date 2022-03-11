@@ -91,7 +91,7 @@ export const Shelf: FC<ShelfProps> = ({
                     <IconButton
                       className={`cursor-${
                         isLoading ? "progress" : "pointer"
-                      } dark:hover:text-zinc-900 hover:text-zinc-50 p-2 mx-2 bg-blue-400 dark:bg-blue-500 hover:bg-blue-500 dark:hover:bg-blue-400 flex rounded-xl`}
+                      } dark:hover:text-zinc-900 hover:text-zinc-50 p-2 mx-1 bg-blue-400 dark:bg-blue-500 hover:bg-blue-500 dark:hover:bg-blue-400 flex rounded-xl`}
                       onClick={() => {
                         handleIsCompleted(id);
                         setTimeout(
@@ -114,7 +114,7 @@ export const Shelf: FC<ShelfProps> = ({
                     <IconButton
                       className={`cursor-${
                         isLoading ? "progress" : "pointer"
-                      } dark:hover:text-zinc-900 hover:text-zinc-50 p-2 mx-2 bg-rose-400 dark:bg-rose-500 hover:bg-rose-500 dark:hover:bg-rose-400 flex rounded-xl`}
+                      } dark:hover:text-zinc-900 hover:text-zinc-50 p-2 mx-1 bg-rose-400 dark:bg-rose-500 hover:bg-rose-500 dark:hover:bg-rose-400 flex rounded-xl`}
                       onClick={() => {
                         handleDelete(id);
                         setTimeout(() => window.location.reload(), 1000);
