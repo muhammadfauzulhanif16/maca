@@ -19,7 +19,9 @@ interface AmountBooksState {
 
 export const HomeComponent: FC<{}> = (): JSX.Element => {
   const dispatch = useDispatch(),
-    { books, isLoading } = useSelector(({ book }: RootState) => book),
+    { books, isLoading, success, error } = useSelector(
+      ({ book }: RootState) => book
+    ),
     reading = books.filter(({ is_completed }: any) => {
       return is_completed === false;
     }),
@@ -49,7 +51,12 @@ export const HomeComponent: FC<{}> = (): JSX.Element => {
   }, [dispatch]);
 
   return (
-    <Layout titlePage="Home">
+    <Layout
+      titlePage="Home"
+      success={success}
+      error={error}
+      isLoading={isLoading}
+    >
       <p className="font-medium mb-4 text-xl">Overview</p>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-8">

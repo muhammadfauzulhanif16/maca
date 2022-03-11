@@ -6,7 +6,9 @@ import { Shelf } from "../common/Shelf";
 
 export const ReadingComponent: FC<{}> = (): JSX.Element => {
   const dispatch = useAppDispatch(),
-    { books, isLoading } = useAppSelector(({ book }: RootState) => book),
+    { books, isLoading, success, error } = useAppSelector(
+      ({ book }: RootState) => book
+    ),
     reading = books.filter(({ is_completed }: any) => {
       return is_completed === false;
     });
@@ -16,7 +18,12 @@ export const ReadingComponent: FC<{}> = (): JSX.Element => {
   }, [dispatch]);
 
   return (
-    <Layout titlePage="Reading">
+    <Layout
+      titlePage="Reading"
+      success={success}
+      error={error}
+      isLoading={isLoading}
+    >
       <Shelf books={reading} isLoading={isLoading} />
     </Layout>
   );

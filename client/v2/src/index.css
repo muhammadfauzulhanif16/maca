@@ -7,7 +7,7 @@ html {
 }
 
 ::-webkit-scrollbar {
-  @apply w-8;
+  @apply w-4;
 }
 
 ::-webkit-scrollbar-thumb {

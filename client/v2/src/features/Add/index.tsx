@@ -15,11 +15,18 @@ import { object, string } from "yup";
 
 export const AddComponent: FC<{}> = (): JSX.Element => {
   const dispatch = useAppDispatch(),
-    { isLoading } = useAppSelector(({ book }: RootState) => book),
+    { isLoading, success, error } = useAppSelector(
+      ({ book }: RootState) => book
+    ),
     navigate = useNavigate();
 
   return (
-    <Layout titlePage="Add">
+    <Layout
+      titlePage="Add"
+      success={success}
+      error={error}
+      isLoading={isLoading}
+    >
       <Formik
         initialValues={{
           title: "",
