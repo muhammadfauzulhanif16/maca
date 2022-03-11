@@ -2,7 +2,6 @@ import { FC, ReactNode } from "react";
 import { Header } from "../Header";
 import { Content } from "../Content";
 import { SideBar } from "../SideBar";
-import { Message } from "../Message";
 
 interface LayoutProps {
   titlePage?: string;

@@ -3,7 +3,7 @@ import {
   CheckmarkCircle,
   Dismiss,
   ErrorCircle,
-  Info,
+  // Info,
 } from "@emotion-icons/fluentui-system-regular";
 import { IconButton } from "../IconButton";
 
@@ -41,7 +41,13 @@ export const Message: FC<MessageProps> = ({
     >
       <div className="flex items-center">
         <IconButton
-          icon={<CheckmarkCircle width={24} />}
+          icon={
+            success ? (
+              <CheckmarkCircle width={24} />
+            ) : error ? (
+              <ErrorCircle width={24} />
+            ) : null
+          }
           className={`${
             success
               ? "bg-emerald-500 dark:bg-emerald-400"

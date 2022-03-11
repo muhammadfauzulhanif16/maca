@@ -107,7 +107,7 @@ export const deleteBookAct = (id: number) => async (dispatch: any) => {
       url: `/book/delete/${id}`,
     });
 
-    // console.log(data);
+    console.log(data);
 
     dispatch({
       type: MESSAGE.SUCCESS,
