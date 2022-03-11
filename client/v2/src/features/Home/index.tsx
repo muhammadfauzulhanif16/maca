@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../store";
 import { readAllBooksAct } from "../../store/actions/book";
 import { IconButton } from "../common/IconButton";
+import { Message } from "../common/Message";
 
 interface AmountBooksState {
   icon: ReactNode;
@@ -51,12 +52,9 @@ export const HomeComponent: FC<{}> = (): JSX.Element => {
   }, [dispatch]);
 
   return (
-    <Layout
-      titlePage="Home"
-      success={success}
-      error={error}
-      isLoading={isLoading}
-    >
+    <Layout titlePage="Home">
+      {isLoading ? null : <Message success={success} error={error} />}
+
       <p className="font-medium mb-4 text-xl">Overview</p>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-8">

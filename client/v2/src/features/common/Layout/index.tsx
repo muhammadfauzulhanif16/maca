@@ -7,25 +7,17 @@ import { Message } from "../Message";
 interface LayoutProps {
   titlePage?: string;
   children?: ReactNode;
-  success?: string;
-  error?: string;
-  isLoading?: boolean;
 }
 
 export const Layout: FC<LayoutProps> = ({
   titlePage,
   children,
-  success,
-  error,
-  isLoading,
 }): JSX.Element => {
   return (
     <div className="flex h-screen">
-      {isLoading ? null : <Message success={success} error={error} />}
-
       <SideBar titlePage={titlePage} />
 
-      <div className="px-4 sm:px-8 w-full">
+      <div className="px-4 sm:px-8 w-full transition-all ease-in-out duration-1000">
         <Header />
 
         <Content children={children} titlePage={titlePage} />

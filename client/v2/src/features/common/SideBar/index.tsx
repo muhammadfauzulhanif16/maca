@@ -30,8 +30,8 @@ export const SideBar: FC<SideBarProps> = ({ titlePage }) => {
     <>
       <aside
         className={`${
-          isShowText ? "w-1/4 " : "w-max"
-        } transition-all ease-in-out hidden lg:flex flex-col shadow-xl bg-zinc-100 dark:bg-zinc-800 top-0 bottom-0 p-4 box my-8 ml-8 rounded-xl`}
+          isShowText ? "w-1/4" : "w-max"
+        } hidden lg:flex flex-col shadow-xl bg-zinc-100 dark:bg-zinc-800 top-0 bottom-0 p-4 box my-8 ml-8 rounded-xl`}
       >
         <div className="flex mb-4 items-center justify-between">
           <IconButton
@@ -64,7 +64,7 @@ export const SideBar: FC<SideBarProps> = ({ titlePage }) => {
                 titlePage === text
                   ? "shadow-xl bg-cyan-400 dark:bg-cyan-500 hover:bg-cyan-400 dark:hover:bg-cyan-500"
                   : "hover:shadow-xl hover:bg-cyan-500 dark:hover:bg-cyan-400 hover:text-zinc-50 dark:hover:text-zinc-900"
-              } w-full flex px-4 py-2 rounded-xl mb-4 font-medium transition-all ease-in-out cursor-pointer`}
+              } w-full flex px-4 py-2 rounded-xl mb-4 font-medium transition-all ease-in-out duration-500 cursor-pointer`}
               icon={icon}
               onClick={(e: any) => {
                 e.preventDefault();
@@ -98,7 +98,7 @@ export const SideBar: FC<SideBarProps> = ({ titlePage }) => {
               titlePage === text
                 ? "shadow-xl bg-cyan-400 dark:bg-cyan-500 hover:bg-cyan-400 dark:hover:bg-cyan-500"
                 : "hover:shadow-xl hover:bg-cyan-500 dark:hover:bg-cyan-400"
-            } w-full p-2 rounded-xl text-sm transition-all ease-in-out cursor-pointer flex flex-col items-center`}
+            } w-full p-2 rounded-xl text-sm transition-all ease-in-out duration-500 cursor-pointer flex flex-col items-center`}
             onClick={(e: any) => {
               e.preventDefault();
               navigate(text === "Home" ? "/" : `/${text?.toLowerCase()}`);

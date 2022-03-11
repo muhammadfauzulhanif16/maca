@@ -18,8 +18,6 @@ const initialState: BookState = {
 };
 
 export const bookReducer = (state = initialState, { type, payload }: any) => {
-  console.log("payload", payload);
-
   switch (type) {
     case LOADING.START:
       return {

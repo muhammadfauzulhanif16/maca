@@ -2,6 +2,7 @@ import { FC, useEffect } from "react";
 import { RootState, useAppDispatch, useAppSelector } from "../../store";
 import { readAllBooksAct } from "../../store/actions/book";
 import { Layout } from "../common/Layout";
+import { Message } from "../common/Message";
 import { Shelf } from "../common/Shelf";
 
 export const ReadingComponent: FC<{}> = (): JSX.Element => {
@@ -18,12 +19,9 @@ export const ReadingComponent: FC<{}> = (): JSX.Element => {
   }, [dispatch]);
 
   return (
-    <Layout
-      titlePage="Reading"
-      success={success}
-      error={error}
-      isLoading={isLoading}
-    >
+    <Layout titlePage="Reading">
+      {isLoading ? null : <Message success={success} error={error} />}
+
       <Shelf books={reading} isLoading={isLoading} />
     </Layout>
   );

@@ -15,7 +15,8 @@ export const createBookAct = (payload: any) => async (dispatch: any) => {
 
     dispatch({
       type: MESSAGE.SUCCESS,
-      payload: "Successfully to create a book",
+      payload:
+        "Successfully to create a book. Please wait, you will be directed to the bookshelf page!",
     });
 
     return dispatch({
@@ -25,7 +26,7 @@ export const createBookAct = (payload: any) => async (dispatch: any) => {
   } catch (e: any) {
     dispatch({
       type: MESSAGE.ERROR,
-      payload: "Failed to create a book",
+      payload: "Failed to create a book. Try again!",
     });
 
     console.log(e.response);
@@ -45,7 +46,7 @@ export const readAllBooksAct = () => async (dispatch: any) => {
 
     dispatch({
       type: MESSAGE.SUCCESS,
-      payload: "Successfully to show the books",
+      payload: "Successfully to show the books.",
     });
 
     return dispatch({
@@ -55,7 +56,7 @@ export const readAllBooksAct = () => async (dispatch: any) => {
   } catch (e: any) {
     dispatch({
       type: MESSAGE.ERROR,
-      payload: "Failed to show the books",
+      payload: "Failed to show the books. Try again!",
     });
 
     console.log(e.response);
@@ -68,16 +69,18 @@ export const updateIsCompletedAct = (id: number) => async (dispatch: any) => {
       type: LOADING.START,
     });
 
-    const response = await API({
+    const { data } = await API({
       method: "PUT",
       url: `/book/update/is_completed/${id}`,
     });
 
-    console.log(response);
+    // console.log(data);
 
     dispatch({
       type: MESSAGE.SUCCESS,
-      payload: "Successfully to change a book status",
+      payload: `Successfully to change a book status. Please wait, you will be directed to the ${
+        data.is_completed ? "finished" : "reading"
+      } bookshelf!`,
     });
 
     return dispatch({
@@ -99,16 +102,17 @@ export const deleteBookAct = (id: number) => async (dispatch: any) => {
       type: LOADING.START,
     });
 
-    const response = await API({
+    const { data } = await API({
       method: "DELETE",
       url: `/book/delete/${id}`,
     });
 
-    console.log(response);
+    // console.log(data);
 
     dispatch({
       type: MESSAGE.SUCCESS,
-      payload: "Successfully to delete a book",
+      payload:
+        "Successfully to delete a book. Please wait, the page will refresh.",
     });
 
     return dispatch({

@@ -9,9 +9,10 @@ import { createBookAct } from "../../store/actions/book";
 import { useNavigate } from "react-router-dom";
 import { IconButton } from "../common/IconButton";
 import { RootState, useAppDispatch, useAppSelector } from "../../store";
-import { FC } from "react";
+import { FC, useState } from "react";
 import { InputForms } from "./InputForms";
 import { object, string } from "yup";
+import { Message } from "../common/Message";
 
 export const AddComponent: FC<{}> = (): JSX.Element => {
   const dispatch = useAppDispatch(),
@@ -21,12 +22,9 @@ export const AddComponent: FC<{}> = (): JSX.Element => {
     navigate = useNavigate();
 
   return (
-    <Layout
-      titlePage="Add"
-      success={success}
-      error={error}
-      isLoading={isLoading}
-    >
+    <Layout titlePage="Add">
+      {isLoading ? null : <Message success={success} error={error} />}
+
       <Formik
         initialValues={{
           title: "",
@@ -47,10 +45,10 @@ export const AddComponent: FC<{}> = (): JSX.Element => {
           resetForm();
           setTimeout(() => {
             navigate(values.is_completed === false ? "/reading" : "/finished");
-          }, 2000);
+          }, 5000);
         }}
       >
-        {({ isSubmitting, errors }: FormikProps<any>): JSX.Element => {
+        {({ isSubmitting }: FormikProps<any>): JSX.Element => {
           return (
             <Form>
               <div className="my-8 flex justify-between">
@@ -76,7 +74,7 @@ export const AddComponent: FC<{}> = (): JSX.Element => {
 
               {isLoading ? (
                 <IconButton
-                  className="dark:hover:text-zinc-900 hover:text-zinc-50 p-2 mx-2 flex justify-center items-center"
+                  className="p-2 mx-2 flex justify-center items-center"
                   icon={<SpinnerIos width={32} className="animate-spin" />}
                   text="Loading"
                   textClass="ml-4"

@@ -30,7 +30,7 @@ export const Header: FC<{}> = (): JSX.Element => {
         </div> */}
 
         <IconButton
-          className="cursor-pointer px-3 text-cyan-400 dark:text-cyan-500 flex lg:hidden items-center font-bold text-2xl"
+          className=" cursor-pointer px-3 text-cyan-400 dark:text-cyan-500 flex lg:hidden items-center font-bold text-2xl"
           icon={<Notebook width={32} />}
           onClick={() => {
             navigate("/");
@@ -40,9 +40,9 @@ export const Header: FC<{}> = (): JSX.Element => {
         />
 
         <IconButton
-          className="transition-all ease-in-out hover:shadow-sm flex rounded-xl hover:bg-zinc-100 dark:hover:bg-zinc-800 px-4 py-2 cursor-pointer"
+          className="hover:shadow-sm flex rounded-xl hover:bg-zinc-100 dark:hover:bg-zinc-800 px-4 py-2 cursor-pointer"
           icon={<Person width={24} />}
-          textClass="hidden sm:inline ml-4"
+          textClass="transition-all ease-in-out duration-1000 ml-4 hidden sm:inline"
           text="Hello, Welcome!"
         />
       </div>

@@ -49,7 +49,7 @@ export const Shelf: FC<ShelfProps> = ({
     <div className="overflow-auto h-80">
       {isLoading ? (
         <IconButton
-          className="dark:hover:text-zinc-900 hover:text-zinc-50 p-2 mx-2 flex justify-center items-center"
+          className="p-2 mx-2 flex justify-center items-center"
           icon={<SpinnerIos width={32} className="animate-spin" />}
           text="Loading"
           textClass="ml-4"
@@ -91,7 +91,7 @@ export const Shelf: FC<ShelfProps> = ({
                     <IconButton
                       className={`cursor-${
                         isLoading ? "progress" : "pointer"
-                      } dark:hover:text-zinc-900 hover:text-zinc-50 p-2 mx-1 bg-sky-400 dark:bg-sky-500 hover:bg-sky-500 dark:hover:bg-sky-400 flex rounded-xl`}
+                      } transition-all ease-in-out dark:hover:text-zinc-900 hover:text-zinc-50 p-2 mx-1 sm:mx-2 bg-sky-400 dark:bg-sky-500 hover:bg-sky-500 dark:hover:bg-sky-400 flex rounded-xl`}
                       onClick={() => {
                         handleIsCompleted(id);
                         setTimeout(
@@ -99,7 +99,7 @@ export const Shelf: FC<ShelfProps> = ({
                             navigate(
                               isCompleted === false ? "/finished" : "/reading"
                             ),
-                          1000
+                          5000
                         );
                       }}
                       icon={
@@ -114,10 +114,10 @@ export const Shelf: FC<ShelfProps> = ({
                     <IconButton
                       className={`cursor-${
                         isLoading ? "progress" : "pointer"
-                      } dark:hover:text-zinc-900 hover:text-zinc-50 p-2 mx-1 bg-rose-400 dark:bg-rose-500 hover:bg-rose-500 dark:hover:bg-rose-400 flex rounded-xl`}
+                      } transition-all ease-in-out dark:hover:text-zinc-900 hover:text-zinc-50 p-2 mx-1 sm:mx-2 bg-rose-400 dark:bg-rose-500 hover:bg-rose-500 dark:hover:bg-rose-400 flex rounded-xl`}
                       onClick={() => {
                         handleDelete(id);
-                        setTimeout(() => window.location.reload(), 1000);
+                        setTimeout(() => window.location.reload(), 5000);
                       }}
                       icon={<Delete width={16} />}
                     />
