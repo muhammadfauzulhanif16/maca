@@ -1,4 +1,4 @@
-import { Field, Form } from "formik";
+import { Field, Form, FormikProps } from "formik";
 import { Layout } from "../common/Layout";
 import { Formik, ErrorMessage } from "formik";
 import {
@@ -27,7 +27,7 @@ export const AddComponent: FC<{}> = (): JSX.Element => {
           published: "",
           is_completed: false,
         }}
-        validationSchema={object({
+        validationSchema={object().shape({
           title: string().required("Required"),
           author: string().required("Required"),
           published: string()
@@ -43,7 +43,7 @@ export const AddComponent: FC<{}> = (): JSX.Element => {
           }, 2000);
         }}
       >
-        {({ isSubmitting, errors }) => {
+        {({ isSubmitting, errors }: FormikProps<any>): JSX.Element => {
           return (
             <Form>
               <div className="my-8 flex justify-between">
