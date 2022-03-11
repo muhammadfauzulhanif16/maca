@@ -1,1 +1,1 @@
-export const InputForms: string[] = ["Title", "Author", "Year"];
+export const InputForms: string[] = ["Title", "Author", "Published"];

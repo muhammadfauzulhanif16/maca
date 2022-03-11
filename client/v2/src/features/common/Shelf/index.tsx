@@ -33,7 +33,7 @@ export const Shelf: FC<ShelfProps> = ({
 }: ShelfProps): JSX.Element => {
   const dispatch = useAppDispatch(),
     navigate = useNavigate(),
-    TableFields: string[] = ["#", "Title", "Author", "Year", "Action"],
+    TableFields: string[] = ["#", "Title", "Author", "Published", "Action"],
     handleIsCompleted = (BookId: number): void => {
       dispatch(updateIsCompletedAct(BookId));
     },
@@ -73,14 +73,20 @@ export const Shelf: FC<ShelfProps> = ({
           <tbody className="divide-y text-zinc-900 dark:text-zinc-50 divide-zinc-100 dark:divide-zinc-800">
             {books?.map(
               (
-                { id, title, author, year, is_completed: isCompleted }: any,
+                {
+                  id,
+                  title,
+                  author,
+                  published,
+                  is_completed: isCompleted,
+                }: any,
                 BookId: number
               ) => (
                 <tr key={id}>
                   <td className="px-6 py-4 text-sm">{BookId + 1}</td>
                   <td className="px-6 py-4 text-sm">{title}</td>
                   <td className="px-6 py-4 text-sm">{author}</td>
-                  <td className="px-6 py-4 text-sm">{year}</td>
+                  <td className="px-6 py-4 text-sm">{published}</td>
                   <td className="px-6 py-4 text-sm flex justify-center dark:text-zinc-50 text-zinc-900">
                     <IconButton
                       className={`cursor-${

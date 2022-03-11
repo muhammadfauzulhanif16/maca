@@ -24,13 +24,15 @@ export const AddComponent: FC<{}> = (): JSX.Element => {
         initialValues={{
           title: "",
           author: "",
-          year: "",
+          published: "",
           is_completed: false,
         }}
         validationSchema={object({
           title: string().required("Required"),
           author: string().required("Required"),
-          year: string().required("Required").max(4, "Must be 4 characters"),
+          published: string()
+            .required("Required")
+            .max(14, "Must be 14 characters"),
         })}
         onSubmit={(values, { resetForm, setSubmitting }): void => {
           dispatch(createBookAct(values));
@@ -93,9 +95,11 @@ export const AddComponent: FC<{}> = (): JSX.Element => {
                           id={title.toLowerCase()}
                           name={title.toLowerCase()}
                           type={
-                            title.toLowerCase() === "year" ? "number" : "text"
+                            title.toLowerCase() === "published"
+                              ? "month"
+                              : "text"
                           }
-                          className="mt-4 px-4 form-input bg-zinc-100 dark:bg-zinc-800 rounded-xl focus:ring-0 border-0"
+                          className="border-0 mt-4 px-4 form-input bg-zinc-100 dark:bg-zinc-800 rounded-xl focus:ring-0"
                         />
 
                         <ErrorMessage
@@ -107,16 +111,19 @@ export const AddComponent: FC<{}> = (): JSX.Element => {
                     )
                   )}
 
-                  <label htmlFor="is_completed" className="flex items-center">
+                  <label
+                    htmlFor="is_completed"
+                    className="inline-flex items-center"
+                  >
                     <Field
                       type="checkbox"
                       id="is_completed"
                       name="is_completed"
-                      className="form-checkbox rounded-md focus:ring-offset-0 focus:ring-0 focus:outline-0 border-0 focus:border-0 bg-zinc-100 dark:bg-zinc-800"
+                      className="border-0 form-checkbox text-cyan-400 dark:text-cyan-500 rounded-md focus:ring-offset-0 focus:ring-0 bg-zinc-100 dark:bg-zinc-800"
                     />
 
                     <p className="font-medium text-md ml-4">
-                      Have you finished reading?
+                      Have you finished reading the book?
                     </p>
                   </label>
                 </>

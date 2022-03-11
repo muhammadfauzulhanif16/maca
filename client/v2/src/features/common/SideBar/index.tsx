@@ -66,9 +66,10 @@ export const SideBar: FC<SideBarProps> = ({ titlePage }) => {
                   : "hover:shadow-xl hover:bg-cyan-500 dark:hover:bg-cyan-400 hover:text-zinc-50 dark:hover:text-zinc-900"
               } w-full flex px-4 py-2 rounded-xl mb-4 font-medium transition-all ease-in-out cursor-pointer`}
               icon={icon}
-              onClick={() =>
-                navigate(text === "Home" ? "/" : `/${text?.toLowerCase()}`)
-              }
+              onClick={(e: any) => {
+                e.preventDefault();
+                navigate(text === "Home" ? "/" : `/${text?.toLowerCase()}`);
+              }}
               text={isShowText ? text : ""}
               textClass={isShowText ? "ml-4" : ""}
             />
@@ -98,9 +99,10 @@ export const SideBar: FC<SideBarProps> = ({ titlePage }) => {
                 ? "shadow-xl bg-cyan-400 dark:bg-cyan-500 hover:bg-cyan-400 dark:hover:bg-cyan-500"
                 : "hover:shadow-xl hover:bg-cyan-500 dark:hover:bg-cyan-400"
             } w-full p-2 rounded-xl text-sm transition-all ease-in-out cursor-pointer flex flex-col items-center`}
-            onClick={() =>
-              navigate(text === "Home" ? "/" : `/${text?.toLowerCase()}`)
-            }
+            onClick={(e: any) => {
+              e.preventDefault();
+              navigate(text === "Home" ? "/" : `/${text?.toLowerCase()}`);
+            }}
             text={text}
           />
         ))}

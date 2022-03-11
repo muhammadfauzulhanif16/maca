@@ -1,7 +1,7 @@
 import { FC } from "react";
 
 interface IconButtonProps {
-  onClick?: () => void;
+  onClick?: (e: any) => void;
   textClass?: string;
   className?: string;
   text?: string;
