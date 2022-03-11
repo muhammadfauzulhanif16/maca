@@ -15,8 +15,9 @@ export const createBookAct = (payload: any) => async (dispatch: any) => {
 
     dispatch({
       type: MESSAGE.SUCCESS,
-      payload:
-        "Successfully to create a book. Please wait, you will be directed to the bookshelf page!",
+      payload: `Successfully to create a book. Please wait, you will be directed to the ${
+        data.is_completed ? "finished" : "reading"
+      } bookshelf!`,
     });
 
     return dispatch({

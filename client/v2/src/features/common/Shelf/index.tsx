@@ -46,7 +46,7 @@ export const Shelf: FC<ShelfProps> = ({
   }, [dispatch]);
 
   return (
-    <div className="overflow-auto h-80">
+    <div className="overflow-auto h-96">
       {isLoading ? (
         <IconButton
           className="p-2 mx-2 flex justify-center items-center"
