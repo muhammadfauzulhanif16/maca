@@ -91,7 +91,7 @@ export const updateIsCompletedAct = (id: number) => async (dispatch: any) => {
 
     dispatch({
       type: MESSAGE.ERROR,
-      payload: "Failed to change a book status",
+      payload: "Failed to change a book status. Try again!",
     });
   }
 };
@@ -112,7 +112,7 @@ export const deleteBookAct = (id: number) => async (dispatch: any) => {
     dispatch({
       type: MESSAGE.SUCCESS,
       payload:
-        "Successfully to delete a book. Please wait, the page will refresh.",
+        "Successfully to delete a book. Please wait, the page will refresh!",
     });
 
     return dispatch({
@@ -123,7 +123,7 @@ export const deleteBookAct = (id: number) => async (dispatch: any) => {
 
     dispatch({
       type: MESSAGE.SUCCESS,
-      payload: "Failed to delete a book",
+      payload: "Failed to delete a book. Try again!",
     });
   }
 };

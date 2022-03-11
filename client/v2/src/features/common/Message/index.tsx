@@ -57,7 +57,7 @@ export const Message: FC<MessageProps> = ({
           } text-zinc-50 dark:text-zinc-900 p-2 rounded-xl`}
         />
 
-        <p className="ml-4">{success || error}</p>
+        <p className="mx-4">{success || error}</p>
       </div>
 
       <IconButton
