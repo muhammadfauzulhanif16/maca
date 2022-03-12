@@ -1,67 +1,88 @@
-import { FC } from "react";
+import { FC, ReactNode, useEffect } from "react";
 import { Layout } from "../common/Layout";
-import { Add } from "@emotion-icons/fluentui-system-regular";
 import {
   Book,
   BookAdd,
   BookOpen,
+  SpinnerIos,
 } from "@emotion-icons/fluentui-system-regular";
-import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../../store";
+import { readAllBooksAct } from "../../store/actions/book";
+import { IconButton } from "../common/IconButton";
+import { Message } from "../common/Message";
+
+interface AmountBooksState {
+  icon: ReactNode;
+  text: string;
+  data: any;
+}
 
 export const HomeComponent: FC<{}> = (): JSX.Element => {
-  const navigate = useNavigate(),
-    Page = [
+  const dispatch = useDispatch(),
+    { books, isLoading, success, error } = useSelector(
+      ({ book }: RootState) => book
+    ),
+    reading = books.filter(({ is_completed }: any) => {
+      return is_completed === false;
+    }),
+    finished = books.filter(({ is_completed }: any) => {
+      return is_completed === true;
+    }),
+    AmountBooks: AmountBooksState[] = [
       {
-        icon: <BookAdd width={24} className="text-slate-500" />,
-        title: "Add",
+        icon: <BookAdd width={24} />,
+        text: "Add",
+        data: books.length,
       },
       {
-        icon: <BookOpen width={24} className="text-slate-500" />,
-        title: "Reading",
+        icon: <BookOpen width={24} />,
+        text: "Reading",
+        data: reading.length,
       },
       {
-        icon: <Book width={24} className="text-slate-500" />,
-        title: "Finished",
+        icon: <Book width={24} />,
+        text: "Finished",
+        data: finished.length,
       },
     ];
 
+  useEffect(() => {
+    dispatch(readAllBooksAct());
+  }, [dispatch]);
+
   return (
-    <Layout titlePage="Dashboard">
-      <div className="mb-6 flex justify-between">
-        <p className="text-3xl font-medium">Dashboard</p>
+    <Layout titlePage="Home">
+      {isLoading ? null : <Message success={success} error={error} />}
 
-        <button
-          onClick={() => navigate("/add")}
-          className="py-2 shadow-2xl bg-cyan-700 hover:bg-cyan-800 font-medium px-4 rounded-lg text-cyan-50 flex items-center"
-        >
-          <Add width={24} className="mr-4" />
-          Create book
-        </button>
-      </div>
+      <p className="font-medium mb-4 text-xl">Overview</p>
 
-      <div>
-        <p className="font-medium mb-3 text-xl">Overview</p>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-8">
+        {AmountBooks.map(
+          ({ icon, text, data }: AmountBooksState, id: number) => (
+            <div
+              key={id}
+              className="bg-zinc-100 dark:bg-zinc-800 shadow-xl rounded-xl flex p-4"
+            >
+              <IconButton
+                icon={icon}
+                className="bg-cyan-400 dark:bg-cyan-500 p-4 rounded-xl shadow-xl text-zinc-900 dark:text-zinc-50"
+              />
 
-        <div className="grid grid-cols-3 gap-8">
-          {Page.map(({ icon, title }) => (
-            <div className="font-medium bg-cyan-50 shadow-xl rounded-lg">
-              <div className="flex p-4 bg-slate-50 rounded-lg">
-                {icon}
-                <div className="ml-4">
-                  <p className="text-slate-600">{`Amount ${title.toLowerCase()}`}</p>
-                  <span className="text-lg">16 book</span>
-                </div>
+              <div className="ml-4">
+                <p>{`Amount ${text.toLowerCase()}`}</p>
+                <span className="text-2xl font-medium">
+                  {isLoading ? (
+                    <SpinnerIos width={24} className="animate-spin" />
+                  ) : (
+                    data
+                  )}{" "}
+                  {data > 1 ? "books" : "book"}
+                </span>
               </div>
-
-              <button
-                onClick={() => navigate(`/${title?.toLowerCase()}`)}
-                className="text-cyan-500 flex justify-start font-medium rounded-lg px-4 py-2 w-full"
-              >
-                View all
-              </button>
             </div>
-          ))}
-        </div>
+          )
+        )}
       </div>
     </Layout>
   );
