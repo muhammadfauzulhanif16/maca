@@ -34,7 +34,7 @@ export const Message: FC<MessageProps> = ({
     );
 
     return () => setIsShow(false);
-  }, []);
+  }, [custom]);
 
   return (
     <div
