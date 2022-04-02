@@ -69,7 +69,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.0.0, @babel/runtime@npm:^7.10.2, @babel/runtime@npm:^7.12.13, @babel/runtime@npm:^7.13.10, @babel/runtime@npm:^7.15.4, @babel/runtime@npm:^7.16.3, @babel/runtime@npm:^7.7.2":
+"@babel/runtime@npm:^7.0.0, @babel/runtime@npm:^7.10.2, @babel/runtime@npm:^7.12.13, @babel/runtime@npm:^7.13.10, @babel/runtime@npm:^7.14.0, @babel/runtime@npm:^7.14.6, @babel/runtime@npm:^7.15.4, @babel/runtime@npm:^7.16.3, @babel/runtime@npm:^7.7.2":
   version: 7.17.2
   resolution: "@babel/runtime@npm:7.17.2"
   dependencies:
@@ -926,6 +926,47 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@emotion-icons/emotion-icon@npm:4.1.0":
+  version: 4.1.0
+  resolution: "@emotion-icons/emotion-icon@npm:4.1.0"
+  dependencies:
+    "@babel/runtime": ^7.14.0
+  peerDependencies:
+    "@emotion/react": ">=11.0.0 <12"
+    "@emotion/styled": ">=11.0.0 <12"
+    react: "*"
+  checksum: fce2a2c1cdae0f2a0b0a355de028dcad5570011e6c9bace4bff66d24bcdcc31fcffefce9fad6475e10a5ec5c275969d58d29be80ddb85647c2821a197659f8ee
+  languageName: node
+  linkType: hard
+
+"@emotion-icons/fluentui-system-filled@npm:^3.15.0":
+  version: 3.15.0
+  resolution: "@emotion-icons/fluentui-system-filled@npm:3.15.0"
+  dependencies:
+    "@babel/runtime": ^7.14.6
+    "@emotion-icons/emotion-icon": 4.1.0
+  peerDependencies:
+    "@emotion/react": ">=11.0.0 <12"
+    "@emotion/styled": ">=11.0.0 <12"
+    react: "*"
+  checksum: ff1cb25fa2bea8924a8a23119d802870db4513ca8a382cca5ff39dc8d2f57899974b418bcb46b3300435977829f88d9eb4f956833e589ce490881f92c3e441b5
+  languageName: node
+  linkType: hard
+
+"@emotion-icons/fluentui-system-regular@npm:^3.15.0":
+  version: 3.15.0
+  resolution: "@emotion-icons/fluentui-system-regular@npm:3.15.0"
+  dependencies:
+    "@babel/runtime": ^7.14.6
+    "@emotion-icons/emotion-icon": 4.1.0
+  peerDependencies:
+    "@emotion/react": ">=11.0.0 <12"
+    "@emotion/styled": ">=11.0.0 <12"
+    react: "*"
+  checksum: 0f738fb67428a8f0675a1b1c00a390910bb2642f56d1392c289dc08b74cfb0983348827d1b56848ea7e613a3c126aaacd11302a4b0da5a993edfecb26ee19ee9
+  languageName: node
+  linkType: hard
+
 "@emotion/babel-plugin@npm:^11.7.1":
   version: 11.7.2
   resolution: "@emotion/babel-plugin@npm:11.7.2"
@@ -1651,6 +1692,13 @@ __metadata:
     ansi-styles: ^4.1.0
     supports-color: ^7.1.0
   checksum: fe75c9d5c76a7a98d45495b91b2172fa3b7a09e0cc9370e5c8feb1c567b85c4288e2b3fded7cfdd7359ac28d6b3844feb8b82b8686842e93d23c827c417e83fc
+  languageName: node
+  linkType: hard
+
+"chart.js@npm:^3.7.1":
+  version: 3.7.1
+  resolution: "chart.js@npm:3.7.1"
+  checksum: f9d118d3b7dd3c36b6da7a8d71ac9e5d9673b81095cc66c3f61ff91674e20020c6700f8c9c6f93713fa8474eb471ded106114346ccc6afa88b4a7d0eb73dcea4
   languageName: node
   linkType: hard
 
@@ -2871,18 +2919,23 @@ __metadata:
   resolution: "maca-v3@workspace:."
   dependencies:
     "@chakra-ui/react": ^1.8.6
+    "@emotion-icons/fluentui-system-filled": ^3.15.0
+    "@emotion-icons/fluentui-system-regular": ^3.15.0
     "@emotion/react": ^11
     "@emotion/styled": ^11
     "@types/node": 17.0.21
     "@types/react": 17.0.40
+    chart.js: ^3.7.1
     eslint: 8.11.0
     eslint-config-next: 12.1.0
     formik: ^2.2.9
     framer-motion: ^6
     next: 12.1.0
     react: 17.0.2
+    react-chartjs-2: ^4.0.1
     react-dom: 17.0.2
     typescript: 4.6.2
+    usehooks-ts: ^2.4.2
     yup: ^0.32.11
   languageName: unknown
   linkType: soft
@@ -3272,6 +3325,16 @@ __metadata:
   version: 1.2.3
   resolution: "queue-microtask@npm:1.2.3"
   checksum: b676f8c040cdc5b12723ad2f91414d267605b26419d5c821ff03befa817ddd10e238d22b25d604920340fd73efd8ba795465a0377c4adf45a4a41e4234e42dc4
+  languageName: node
+  linkType: hard
+
+"react-chartjs-2@npm:^4.0.1":
+  version: 4.0.1
+  resolution: "react-chartjs-2@npm:4.0.1"
+  peerDependencies:
+    chart.js: ^3.5.0
+    react: ^16.8.0 || ^17.0.0
+  checksum: c22e994c73c0fba8140e9228703b3a94f54a053b00b7a70a53d7056139349f3032daf1512fa38bad23e8e348affc4e36ebbfea8beb5e4c5802bfc8c72d9c68d6
   languageName: node
   linkType: hard
 
@@ -3880,6 +3943,15 @@ __metadata:
   peerDependencies:
     react: ^16.8.0 || ^17.0.0
   checksum: 96e64977a573244fd11350a3141b2cf57fb72dd9dd902f387c8a0a565d0a948bc81588bd7378c6ef6defc0d1119f37f73aac4a7a287c8443abd444bd4e7bbea8
+  languageName: node
+  linkType: hard
+
+"usehooks-ts@npm:^2.4.2":
+  version: 2.4.2
+  resolution: "usehooks-ts@npm:2.4.2"
+  peerDependencies:
+    react: ">=16.8.0"
+  checksum: 6dd14bb5301f80061443c5ab00b07779e0186c8c3b022138fb23431e05cb5067a266f82b39585dce262d66e5fc4a174032d4e47c7f5428bfd90f601ec624800e
   languageName: node
   linkType: hard
 
